@@ -47,11 +47,11 @@ Describe any challenges encountered while building the app.
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
-- [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
+- [SportsDataAPI](https://www.mysportsfeeds.com/data-feeds/api-docs/) - main data source
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2018] [Group 10]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
