@@ -5,16 +5,16 @@
 Time spent: **X** hours spent in total
 
 ## User Stories
-
+User searches a team and the application displays the video of the highlights of the teams last game
 The following **required** functionality is completed:
-- [ ] User sees app icon in home screen and styled launch screen. (1pt)
-- [ ] User can sign in using OAuth login flow. (1pt)
-- [ ] User can Logout. (1pt)
-- [ ] Create Data Models for User and Tweet. (1pt)
-- [ ] User can view last 20 tweets from their home timeline with the user profile picture, username, tweet text, and timestamp. (2pts)
+- [ ] User sees app icon in home screen and styled launch screen. 
+- [ ] User sees a list of sports to choose from 
+- [ ] User can pick a sport from the list
+- [ ] User sees a list of teams to pick from
+- [ ] User can pick a team from the list
+- [ ] User can click on the video from the teams last match
 - [ ] User can pull to refresh. (1pt)
-- [ ] User can tap the retweet and favorite buttons in a tweet cell to retweet and/or favorite a tweet. (2pts)
-- [ ] Using AutoLayout, the Tweet cell should adjust it's layout for iPhone 7, Plus and SE device sizes as well as accommodate device rotation. 
+- [ ] Using AutoLayout, the sports cell should adjust it's layout for iPhone 8, Plus and SE device sizes as well as accommodate device rotation. 
 
 The following **stretch** features are implemented:
 
