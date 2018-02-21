@@ -1,18 +1,20 @@
 # Project 5 - *SportLights*
 
-**SportLights** is a basic sports highlights app to displays the video of the highlights of the teams last game
+**SportLights** is an IOS application that displays sport team highlights of their last game played.
+
 Time spent: **X** hours spent in total
 
 ## User Stories
+
 The following **required** functionality is completed:
-- [ ] User sees app icon in home screen and styled launch screen. 
-- [ ] User sees a list of sports to choose from 
-- [ ] User can pick a sport from the list
-- [ ] User sees a list of teams to pick from
-- [ ] User can pick a team from the list
-- [ ] User can click on the video from the teams last match
+- [ ] User sees app icon in home screen and styled launch screen. (1pt)
+- [ ] User can login. (1pt)
+- [ ] User can Logout. (1pt)
+- [ ] User can enter the name of the team they wish to see highlights from (1pt)
+- [ ] User can save their favorite teams. (1pt)
+- [ ] User can view their top favorite team highlights when application opens. (2pts)
 - [ ] User can pull to refresh. (1pt)
-- [ ] Using AutoLayout, the sports cell should adjust it's layout for iPhone 8, Plus and SE device sizes as well as accommodate device rotation. 
+- [ ] Using AutoLayout, the highlights cell should adjust it's layout for iPhone 7, Plus and SE device sizes as well as accommodate device rotation. 
 
 The following **stretch** features are implemented:
 
