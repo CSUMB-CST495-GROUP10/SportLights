@@ -17,7 +17,7 @@ The following **required** functionality is completed:
 
 The following **stretch** features are implemented:
 
-- [ ] User can a searchbar to choose a team 
+- [ ] User can use a search bar to choose a team 
 - [ ] User can sign in 
 - [ ] User can Logout. 
 - [ ] User can save highlights videos to their playlist
