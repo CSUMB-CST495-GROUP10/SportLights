@@ -1,7 +1,8 @@
 # Project 5 - *SportLights*
 
 **SportLights** is a basic sports highlights app to displays the video of the highlights of the teams last game
-Time spent: **X** hours spent in total
+
+Time spent:**X** hours spent in total
 
 ## User Stories
 The following **required** functionality is completed:
