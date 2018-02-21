@@ -1,6 +1,6 @@
-# Project 5 - *Name of App Here*
+# Project 5 - *SportLights*
 
-**Name of your app** is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
+**SportLights** is an IOS application that will display sport team related highlights of their last game played.
 
 Time spent: **X** hours spent in total
 
@@ -54,7 +54,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2018 Israel Andrade, Diego Medina, Samuel Sanchez
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
