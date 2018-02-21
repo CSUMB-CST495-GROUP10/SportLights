@@ -1,11 +1,9 @@
 # Project 5 - *SportLights*
 
-**SportLights** is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
-
+**SportLights** is a basic sports highlights app to displays the video of the highlights of the teams last game
 Time spent: **X** hours spent in total
 
 ## User Stories
-User searches a team and the application displays the video of the highlights of the teams last game
 The following **required** functionality is completed:
 - [ ] User sees app icon in home screen and styled launch screen. 
 - [ ] User sees a list of sports to choose from 
