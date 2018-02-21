@@ -18,7 +18,7 @@ The following **required** functionality is completed:
 
 The following **stretch** features are implemented:
 
-- [ ] As a ____ user, I want/need to ____ because of ____ - [ ] 
+- [ ] As a ____ user, I want/need to ____ because of ____ 
 - [ ] As a ____ user, I want/need to ____ because of ____ 
 - [ ] As a ____ user, I want/need to ____ because of ____ 
 - [ ] As a ____ user, I want/need to ____ because of ____ 
