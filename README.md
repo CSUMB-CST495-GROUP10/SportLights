@@ -1,29 +1,25 @@
-# Project 5 - *Name of App Here*
+# Project 5 - *SportLights*
 
-**Name of your app** is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
+**SportLights** is a basic sports highlights app to displays the video of the highlights of the teams last game
 
-Time spent: **X** hours spent in total
+Time spent:**X** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
-
-- [ ] User sees app icon in home screen and styled launch screen. (1pt)
-- [ ] User can sign in using OAuth login flow. (1pt)
-- [ ] User can Logout. (1pt)
-- [ ] Create Data Models for User and Tweet. (1pt)
-- [ ] User can view last 20 tweets from their home timeline with the user profile picture, username, tweet text, and timestamp. (2pts)
-- [ ] User can pull to refresh. (1pt)
-- [ ] User can tap the retweet and favorite buttons in a tweet cell to retweet and/or favorite a tweet. (2pts)
-- [ ] Using AutoLayout, the Tweet cell should adjust it's layout for iPhone 7, Plus and SE device sizes as well as accommodate device rotation. (1pt)
+- [ ] User sees app icon in home screen and styled launch screen.
+- [ ] User can use a search bar to choose a team 
+- [ ] User can pick a sport from the list
+- [ ] User sees a list of teams to pick from
+- [ ] User can pull to refresh. 
+- [ ] Using AutoLayout, the sports cell should adjust it's layout for iPhone 8, Plus and SE device sizes as well as accommodate device rotation. 
 
 The following **stretch** features are implemented:
-
-- [ ] The current signed in user will be persisted across restarts. (1pt)
-- [ ] Each tweet should display the relative timestamp for each tweet "8m", "7h". (1pt)
-- [ ] User should be able to unretweet and unfavorite and should decrement the retweet and favorite count. (1pt)
-- [ ] Links in tweets are clickable. (2pts)
-- [ ] User can load more tweets once they reach the bottom of the feed using infinite loading similar to the actual Twitter client. (2pts)
+- [ ] User can sign in 
+- [ ] User can Logout. 
+- [ ] User can save highlights videos to their playlist
+- [ ] User can save their favorite teams.
+- [ ] User can view their top favorite team highlights when application opens.
 
 The following **additional** features are implemented:
 
@@ -50,11 +46,11 @@ Describe any challenges encountered while building the app.
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
-- [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
+- [SportsDataAPI](https://www.mysportsfeeds.com/data-feeds/api-docs/) - main data source
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2018] [Group 10]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
