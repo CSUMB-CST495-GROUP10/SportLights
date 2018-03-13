@@ -31,7 +31,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 2.
 
 ## Wireframe
-![alt text](https://ibb.co/j5NWXx)
+![Wire Frame](https://ibb.co/j5NWXx)
 
 ## Considerations
 * What is your product pitch?
