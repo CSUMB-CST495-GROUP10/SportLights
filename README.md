@@ -31,7 +31,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 2.
 
 ## Wireframe
-![Wire Frame](https://ibb.co/j5NWXx)
+![Wire Frame](https://github.com/CSUMB-CST495-GROUP10/SportLights/blob/master/wireframePic.png)
 
 ## Considerations
 * What is your product pitch?
