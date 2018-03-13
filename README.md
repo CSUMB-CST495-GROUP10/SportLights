@@ -30,22 +30,48 @@ Please list two areas of the assignment you'd like to **discuss further with you
 1.
 2.
 
+## Wireframe
+![alt text](https://ibb.co/j5NWXx)
+
 ## Considerations
 * What is your product pitch?
     * Start with a problem statement and follow up with a solution.
     * Focus on engaging your audience with a relatable need.
+    
 * Who are the key stakeholders for this app?
    * Who will be using this?
    * What will they be using this for?
+   
+   * The key stakeholders for this app are sports enthusiast who would like to relive their teams highlights 
+   of their last game played or for those who were unable to watch it live. 
+   
 * What are the core flows?
    * What are the key functions?
    * What screens will each user see?
+   
+   * The key functions for SportLights is the ability to search any team, from any sport, and view the highlights 
+   of their last game played. The user will user four screens: home page, login, sign up, search/video, 
+   and their profile screen.
+   
 * What will your final demo look like?
    * Describe the flow of your final demo
+   
+   * The flow of the final demo will first greet the user with a launch screen of the SportLights logo. Followed by 
+   the home page that will ask the user to either sign up, login, or search for a team. To demostrate that the user 
+   can easily search for a team without being logged in, we will press the search button and search for any team
+   and view their highlights. After the video is displayed, we will demonstrate how to sign up to SportLights and show 
+   how they can login. Finally, demonstrating the user's profile once logged in.
+   
 * What mobile features do you leverage?
    * Leverage at least two mobile-oriented features (i.e. maps and camera)
+   
+   * The two mobile-oriented features SportLights will leverage are media video player and user location.
+   
 * What are your technical concerns?
    * What technical features do you need help or resources for?
+   
+   * Some technical concerns are finding the perfect API, displaying the correct highlights, and containing
+   the users list of favorite teams.
 
 ## Video Walkthrough
 
