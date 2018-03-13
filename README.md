@@ -31,9 +31,9 @@ Please list two areas of the assignment you'd like to **discuss further with you
 2.
 
 ## Considerations
-- What is your product pitch?
-* Start with a problem statement and follow up with a solution.
-* Focus on engaging your audience with a relatable need.
+* What is your product pitch?
+    * Start with a problem statement and follow up with a solution.
+    * Focus on engaging your audience with a relatable need.
 - Who are the key stakeholders for this app?
 Who will be using this?
 What will they be using this for?
