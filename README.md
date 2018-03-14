@@ -35,8 +35,10 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 ## Considerations
 * What is your product pitch?
-    * Start with a problem statement and follow up with a solution.
-    * Focus on engaging your audience with a relatable need.
+    * Have you ever wanted to find awesome highlights of your favorite sports teams but end up on a manual YouTube search for the hours?
+    * Welcome to SportLights, where you can view a variety of your teams highlights from the palm of your hand!
+    * Other Apps such as ESPN on offer news reports and small pieces about a teams activity, and will only show you minimal or top 5/10 highlights
+    * Along with a plethora of videos, one csn choose a team to recieve videos for and catelog them to their account.
     
 * Who are the key stakeholders for this app?
    * The key stakeholders for this app are sports enthusiast who would like to relive their teams highlights 
