@@ -1,0 +1,770 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5451F5AF2058B3BC00122197 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451F5AE2058B3BC00122197 /* AppDelegate.swift */; };
+		5451F5B12058B3BC00122197 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451F5B02058B3BC00122197 /* ViewController.swift */; };
+		5451F5B42058B3BC00122197 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5451F5B22058B3BC00122197 /* Main.storyboard */; };
+		5451F5B62058B3BC00122197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5451F5B52058B3BC00122197 /* Assets.xcassets */; };
+		5451F5B92058B3BC00122197 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5451F5B72058B3BC00122197 /* LaunchScreen.storyboard */; };
+		5451F5C42058B3BC00122197 /* SportLightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451F5C32058B3BC00122197 /* SportLightsTests.swift */; };
+		5451F5CF2058B3BC00122197 /* SportLightsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451F5CE2058B3BC00122197 /* SportLightsUITests.swift */; };
+		7D5CB41E7A58D3CFEBCEF80A /* Pods_SportLights.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C410B43E7D80A4439A2A63D8 /* Pods_SportLights.framework */; };
+		E870CAD088BEA1DBE73D8023 /* Pods_SportLightsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29AA3F01CD666DAC96488203 /* Pods_SportLightsUITests.framework */; };
+		F6978FD95D585C0FBB358643 /* Pods_SportLightsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51D9551CF77483A850CA28E /* Pods_SportLightsTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5451F5C02058B3BC00122197 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5451F5A32058B3BC00122197 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5451F5AA2058B3BC00122197;
+			remoteInfo = SportLights;
+		};
+		5451F5CB2058B3BC00122197 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5451F5A32058B3BC00122197 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5451F5AA2058B3BC00122197;
+			remoteInfo = SportLights;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		15786DD490ED5062C3575578 /* Pods-SportLightsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportLightsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportLightsUITests/Pods-SportLightsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1E99E472273BD576EB3078D6 /* Pods-SportLights.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportLights.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportLights/Pods-SportLights.release.xcconfig"; sourceTree = "<group>"; };
+		29AA3F01CD666DAC96488203 /* Pods_SportLightsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportLightsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35C5330E6A83474F44DF596E /* Pods-SportLights.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportLights.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportLights/Pods-SportLights.debug.xcconfig"; sourceTree = "<group>"; };
+		428D1A9B6D9091D66BE5BFDD /* Pods-SportLightsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportLightsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportLightsTests/Pods-SportLightsTests.release.xcconfig"; sourceTree = "<group>"; };
+		5451F5AB2058B3BC00122197 /* SportLights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportLights.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5451F5AE2058B3BC00122197 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5451F5B02058B3BC00122197 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5451F5B32058B3BC00122197 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5451F5B52058B3BC00122197 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5451F5B82058B3BC00122197 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5451F5BA2058B3BC00122197 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5451F5BF2058B3BC00122197 /* SportLightsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportLightsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5451F5C32058B3BC00122197 /* SportLightsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportLightsTests.swift; sourceTree = "<group>"; };
+		5451F5C52058B3BC00122197 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5451F5CA2058B3BC00122197 /* SportLightsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportLightsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5451F5CE2058B3BC00122197 /* SportLightsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportLightsUITests.swift; sourceTree = "<group>"; };
+		5451F5D02058B3BC00122197 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C410B43E7D80A4439A2A63D8 /* Pods_SportLights.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportLights.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1948878293989BB987160FB /* Pods-SportLightsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportLightsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportLightsUITests/Pods-SportLightsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D51D9551CF77483A850CA28E /* Pods_SportLightsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportLightsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB3B67BAF012D6D3A967AD9D /* Pods-SportLightsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportLightsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportLightsTests/Pods-SportLightsTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5451F5A82058B3BC00122197 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D5CB41E7A58D3CFEBCEF80A /* Pods_SportLights.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5451F5BC2058B3BC00122197 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6978FD95D585C0FBB358643 /* Pods_SportLightsTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5451F5C72058B3BC00122197 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E870CAD088BEA1DBE73D8023 /* Pods_SportLightsUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C6D62A11321A206BEE04759 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				35C5330E6A83474F44DF596E /* Pods-SportLights.debug.xcconfig */,
+				1E99E472273BD576EB3078D6 /* Pods-SportLights.release.xcconfig */,
+				FB3B67BAF012D6D3A967AD9D /* Pods-SportLightsTests.debug.xcconfig */,
+				428D1A9B6D9091D66BE5BFDD /* Pods-SportLightsTests.release.xcconfig */,
+				15786DD490ED5062C3575578 /* Pods-SportLightsUITests.debug.xcconfig */,
+				D1948878293989BB987160FB /* Pods-SportLightsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5451F5A22058B3BC00122197 = {
+			isa = PBXGroup;
+			children = (
+				5451F5AD2058B3BC00122197 /* SportLights */,
+				5451F5C22058B3BC00122197 /* SportLightsTests */,
+				5451F5CD2058B3BC00122197 /* SportLightsUITests */,
+				5451F5AC2058B3BC00122197 /* Products */,
+				1C6D62A11321A206BEE04759 /* Pods */,
+				F772746D6A20A9DC1CD0242F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5451F5AC2058B3BC00122197 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5451F5AB2058B3BC00122197 /* SportLights.app */,
+				5451F5BF2058B3BC00122197 /* SportLightsTests.xctest */,
+				5451F5CA2058B3BC00122197 /* SportLightsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5451F5AD2058B3BC00122197 /* SportLights */ = {
+			isa = PBXGroup;
+			children = (
+				5451F5AE2058B3BC00122197 /* AppDelegate.swift */,
+				5451F5B02058B3BC00122197 /* ViewController.swift */,
+				5451F5B22058B3BC00122197 /* Main.storyboard */,
+				5451F5B52058B3BC00122197 /* Assets.xcassets */,
+				5451F5B72058B3BC00122197 /* LaunchScreen.storyboard */,
+				5451F5BA2058B3BC00122197 /* Info.plist */,
+			);
+			path = SportLights;
+			sourceTree = "<group>";
+		};
+		5451F5C22058B3BC00122197 /* SportLightsTests */ = {
+			isa = PBXGroup;
+			children = (
+				5451F5C32058B3BC00122197 /* SportLightsTests.swift */,
+				5451F5C52058B3BC00122197 /* Info.plist */,
+			);
+			path = SportLightsTests;
+			sourceTree = "<group>";
+		};
+		5451F5CD2058B3BC00122197 /* SportLightsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5451F5CE2058B3BC00122197 /* SportLightsUITests.swift */,
+				5451F5D02058B3BC00122197 /* Info.plist */,
+			);
+			path = SportLightsUITests;
+			sourceTree = "<group>";
+		};
+		F772746D6A20A9DC1CD0242F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C410B43E7D80A4439A2A63D8 /* Pods_SportLights.framework */,
+				D51D9551CF77483A850CA28E /* Pods_SportLightsTests.framework */,
+				29AA3F01CD666DAC96488203 /* Pods_SportLightsUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5451F5AA2058B3BC00122197 /* SportLights */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5451F5D32058B3BC00122197 /* Build configuration list for PBXNativeTarget "SportLights" */;
+			buildPhases = (
+				FEECF73B613324AA4F2EBC3C /* [CP] Check Pods Manifest.lock */,
+				5451F5A72058B3BC00122197 /* Sources */,
+				5451F5A82058B3BC00122197 /* Frameworks */,
+				5451F5A92058B3BC00122197 /* Resources */,
+				855A220877ED7C2EB2F58984 /* [CP] Embed Pods Frameworks */,
+				8CDA72905F53AC4E87CD86EC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SportLights;
+			productName = SportLights;
+			productReference = 5451F5AB2058B3BC00122197 /* SportLights.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5451F5BE2058B3BC00122197 /* SportLightsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5451F5D62058B3BC00122197 /* Build configuration list for PBXNativeTarget "SportLightsTests" */;
+			buildPhases = (
+				7630AB6B53B5555189AF2120 /* [CP] Check Pods Manifest.lock */,
+				5451F5BB2058B3BC00122197 /* Sources */,
+				5451F5BC2058B3BC00122197 /* Frameworks */,
+				5451F5BD2058B3BC00122197 /* Resources */,
+				2720900DC9C597B4F515715B /* [CP] Embed Pods Frameworks */,
+				EDDAD92EEAC3B124AA7D53A2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5451F5C12058B3BC00122197 /* PBXTargetDependency */,
+			);
+			name = SportLightsTests;
+			productName = SportLightsTests;
+			productReference = 5451F5BF2058B3BC00122197 /* SportLightsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5451F5C92058B3BC00122197 /* SportLightsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5451F5D92058B3BC00122197 /* Build configuration list for PBXNativeTarget "SportLightsUITests" */;
+			buildPhases = (
+				7E9F0239EEF6B69854250243 /* [CP] Check Pods Manifest.lock */,
+				5451F5C62058B3BC00122197 /* Sources */,
+				5451F5C72058B3BC00122197 /* Frameworks */,
+				5451F5C82058B3BC00122197 /* Resources */,
+				24EADDD64CE1D4F3A4081A73 /* [CP] Embed Pods Frameworks */,
+				7C77A20FFE32D29FE807D111 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5451F5CC2058B3BC00122197 /* PBXTargetDependency */,
+			);
+			name = SportLightsUITests;
+			productName = SportLightsUITests;
+			productReference = 5451F5CA2058B3BC00122197 /* SportLightsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5451F5A32058B3BC00122197 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Diego Medina";
+				TargetAttributes = {
+					5451F5AA2058B3BC00122197 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					5451F5BE2058B3BC00122197 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5451F5AA2058B3BC00122197;
+					};
+					5451F5C92058B3BC00122197 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5451F5AA2058B3BC00122197;
+					};
+				};
+			};
+			buildConfigurationList = 5451F5A62058B3BC00122197 /* Build configuration list for PBXProject "SportLights" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5451F5A22058B3BC00122197;
+			productRefGroup = 5451F5AC2058B3BC00122197 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5451F5AA2058B3BC00122197 /* SportLights */,
+				5451F5BE2058B3BC00122197 /* SportLightsTests */,
+				5451F5C92058B3BC00122197 /* SportLightsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5451F5A92058B3BC00122197 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5451F5B92058B3BC00122197 /* LaunchScreen.storyboard in Resources */,
+				5451F5B62058B3BC00122197 /* Assets.xcassets in Resources */,
+				5451F5B42058B3BC00122197 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5451F5BD2058B3BC00122197 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5451F5C82058B3BC00122197 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24EADDD64CE1D4F3A4081A73 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportLightsUITests/Pods-SportLightsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2720900DC9C597B4F515715B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportLightsTests/Pods-SportLightsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7630AB6B53B5555189AF2120 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SportLightsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C77A20FFE32D29FE807D111 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportLightsUITests/Pods-SportLightsUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E9F0239EEF6B69854250243 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SportLightsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		855A220877ED7C2EB2F58984 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SportLights/Pods-SportLights-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportLights/Pods-SportLights-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CDA72905F53AC4E87CD86EC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportLights/Pods-SportLights-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDDAD92EEAC3B124AA7D53A2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportLightsTests/Pods-SportLightsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEECF73B613324AA4F2EBC3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SportLights-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5451F5A72058B3BC00122197 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5451F5B12058B3BC00122197 /* ViewController.swift in Sources */,
+				5451F5AF2058B3BC00122197 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5451F5BB2058B3BC00122197 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5451F5C42058B3BC00122197 /* SportLightsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5451F5C62058B3BC00122197 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5451F5CF2058B3BC00122197 /* SportLightsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5451F5C12058B3BC00122197 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5451F5AA2058B3BC00122197 /* SportLights */;
+			targetProxy = 5451F5C02058B3BC00122197 /* PBXContainerItemProxy */;
+		};
+		5451F5CC2058B3BC00122197 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5451F5AA2058B3BC00122197 /* SportLights */;
+			targetProxy = 5451F5CB2058B3BC00122197 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5451F5B22058B3BC00122197 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5451F5B32058B3BC00122197 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5451F5B72058B3BC00122197 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5451F5B82058B3BC00122197 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5451F5D12058B3BC00122197 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5451F5D22058B3BC00122197 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5451F5D42058B3BC00122197 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35C5330E6A83474F44DF596E /* Pods-SportLights.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2KMUXZ44WH;
+				INFOPLIST_FILE = SportLights/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.csumb.DiMedina.SportLights;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5451F5D52058B3BC00122197 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E99E472273BD576EB3078D6 /* Pods-SportLights.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2KMUXZ44WH;
+				INFOPLIST_FILE = SportLights/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.csumb.DiMedina.SportLights;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5451F5D72058B3BC00122197 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB3B67BAF012D6D3A967AD9D /* Pods-SportLightsTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2KMUXZ44WH;
+				INFOPLIST_FILE = SportLightsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.csumb.DiMedina.SportLightsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportLights.app/SportLights";
+			};
+			name = Debug;
+		};
+		5451F5D82058B3BC00122197 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 428D1A9B6D9091D66BE5BFDD /* Pods-SportLightsTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2KMUXZ44WH;
+				INFOPLIST_FILE = SportLightsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.csumb.DiMedina.SportLightsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportLights.app/SportLights";
+			};
+			name = Release;
+		};
+		5451F5DA2058B3BC00122197 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15786DD490ED5062C3575578 /* Pods-SportLightsUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2KMUXZ44WH;
+				INFOPLIST_FILE = SportLightsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.csumb.DiMedina.SportLightsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SportLights;
+			};
+			name = Debug;
+		};
+		5451F5DB2058B3BC00122197 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1948878293989BB987160FB /* Pods-SportLightsUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2KMUXZ44WH;
+				INFOPLIST_FILE = SportLightsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.csumb.DiMedina.SportLightsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SportLights;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5451F5A62058B3BC00122197 /* Build configuration list for PBXProject "SportLights" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5451F5D12058B3BC00122197 /* Debug */,
+				5451F5D22058B3BC00122197 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5451F5D32058B3BC00122197 /* Build configuration list for PBXNativeTarget "SportLights" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5451F5D42058B3BC00122197 /* Debug */,
+				5451F5D52058B3BC00122197 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5451F5D62058B3BC00122197 /* Build configuration list for PBXNativeTarget "SportLightsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5451F5D72058B3BC00122197 /* Debug */,
+				5451F5D82058B3BC00122197 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5451F5D92058B3BC00122197 /* Build configuration list for PBXNativeTarget "SportLightsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5451F5DA2058B3BC00122197 /* Debug */,
+				5451F5DB2058B3BC00122197 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5451F5A32058B3BC00122197 /* Project object */;
+}
