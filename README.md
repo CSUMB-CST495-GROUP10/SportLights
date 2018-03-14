@@ -63,7 +63,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
    * Some technical concerns are finding the perfect API, displaying the correct highlights, and containing
    the users list of favorite teams.
 
-## Date Models
+## Business Models
 
 * User
    * first_name, last_name, username, profile_image, created_on
