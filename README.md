@@ -8,9 +8,9 @@ Time spent:**X** hours spent in total
 
 The following **required** functionality is completed:
 - [ ] User sees app icon in home screen and styled launch screen.
-- [ ] User can use a search bar to choose a team 
-- [ ] User can pick a sport from the list
 - [ ] User sees a list of teams to pick from
+- [ ] User can pick a sport from the list
+- [ ] User can use a search bar to choose a team 
 - [ ] User can pull to refresh. 
 - [ ] Using AutoLayout, the sports cell should adjust it's layout for iPhone 8, Plus and SE device sizes as well as accommodate device rotation. 
 
