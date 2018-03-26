@@ -8,8 +8,9 @@ Time spent:**X** hours spent in total
 
 The following **required** functionality is completed:
 - [ ] User sees app icon in home screen and styled launch screen.
-- [ ] User can sign in 
-- [ ] User can Logout. 
+- [x] User can sign in 
+- [x] User can Logout. 
+- [x] persistance login
 - [ ] User sees a list of teams to pick from
 - [ ] User can pick a sport from the list
 - [ ] User can use a search bar to choose a team 
