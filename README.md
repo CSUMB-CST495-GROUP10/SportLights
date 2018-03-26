@@ -8,6 +8,8 @@ Time spent:**X** hours spent in total
 
 The following **required** functionality is completed:
 - [ ] User sees app icon in home screen and styled launch screen.
+- [ ] User can sign in 
+- [ ] User can Logout. 
 - [ ] User sees a list of teams to pick from
 - [ ] User can pick a sport from the list
 - [ ] User can use a search bar to choose a team 
@@ -15,8 +17,6 @@ The following **required** functionality is completed:
 - [ ] Using AutoLayout, the sports cell should adjust it's layout for iPhone 8, Plus and SE device sizes as well as accommodate device rotation. 
 
 The following **stretch** features are implemented:
-- [ ] User can sign in 
-- [ ] User can Logout. 
 - [ ] User can save highlights videos to their playlist
 - [ ] User can save their favorite teams.
 - [ ] User can view their top favorite team highlights when application opens.
