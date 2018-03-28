@@ -7,7 +7,7 @@ Time spent:**X** hours spent in total
 ## User Stories
 
 The following **required** functionality is completed:
-- [ ] User sees app icon in home screen and styled launch screen.
+- [x] User sees app icon in home screen and styled launch screen.
 - [x] User can sign in 
 - [x] User can Logout. 
 - [x] persistance login
