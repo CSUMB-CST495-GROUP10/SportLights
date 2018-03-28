@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var userName: UITextField!
@@ -51,6 +52,8 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+    
     /*
     // MARK: - Navigation
 
