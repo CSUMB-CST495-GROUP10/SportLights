@@ -7,6 +7,9 @@ Time spent:**X** hours spent in total
 ## User Stories
 
 The following **required** functionality is completed:
+- [x] Create custom logo for the application
+- [x] Make custom logo fit app icons correctly
+- [x] Add app name on login page
 - [x] User sees app icon in home screen and styled launch screen.
 - [x] User can sign in 
 - [x] User can Logout. 
