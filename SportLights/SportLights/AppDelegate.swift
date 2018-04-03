@@ -42,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
+    
     func logOut() {
         // Logout the current user
         PFUser.logOutInBackground(block: { (error) in
