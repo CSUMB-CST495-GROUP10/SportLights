@@ -33,10 +33,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         PFUser.logInWithUsername(inBackground: userName.text!, password: password.text!) { (user: PFUser?, error: Error?) in
             if(user != nil) {
                 print("You're logged in")
-                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                self.performSegue(withIdentifier: "SportsListSegue", sender: nil)
             } else {
                 print("Wrong username/password")
-                
                 self.createAlert(title: "Error", message: "Wrong username/password")
             }
         }
@@ -51,7 +50,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         newUser.signUpInBackground { (success: Bool, error: Error?) in
             if(success) {
                 print("Yay, Created a user!")
-                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                self.performSegue(withIdentifier: "SportsListSegue", sender: nil)
             } else {
                 print(error?.localizedDescription as Any)
                 if(error?._code == 202) {

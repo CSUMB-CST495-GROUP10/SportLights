@@ -29,9 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // view controller currently being set in Storyboard as default will be overridden
             //   let loggedInViewController = storyboard.instantiateViewController(withIdentifier: "tabBar")
             // self.window?.rootViewController = loggedInViewController
-            let loginViewController = storyboard.instantiateViewController(withIdentifier: "homeNavBar")//PUT_YOUR_LOGIN_VC_ID_HERE
+            let loginViewController = storyboard.instantiateViewController(withIdentifier: "SportsList")
             window?.rootViewController = loginViewController
-            
         }
         
         NotificationCenter.default.addObserver(forName: Notification.Name("didLogout"), object: nil, queue: OperationQueue.main) { (Notification) in

@@ -18,7 +18,6 @@
 		5451F5CF2058B3BC00122197 /* SportLightsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451F5CE2058B3BC00122197 /* SportLightsUITests.swift */; };
 		7D5CB41E7A58D3CFEBCEF80A /* Pods_SportLights.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C410B43E7D80A4439A2A63D8 /* Pods_SportLights.framework */; };
 		8E02AD2620699EAF006580F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E02AD2520699EAF006580F8 /* LoginViewController.swift */; };
-		8E02AD282069A32C006580F8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E02AD272069A32C006580F8 /* HomeViewController.swift */; };
 		E870CAD088BEA1DBE73D8023 /* Pods_SportLightsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29AA3F01CD666DAC96488203 /* Pods_SportLightsUITests.framework */; };
 		F6978FD95D585C0FBB358643 /* Pods_SportLightsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51D9551CF77483A850CA28E /* Pods_SportLightsTests.framework */; };
 /* End PBXBuildFile section */
@@ -62,7 +61,6 @@
 		5451F5CE2058B3BC00122197 /* SportLightsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportLightsUITests.swift; sourceTree = "<group>"; };
 		5451F5D02058B3BC00122197 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E02AD2520699EAF006580F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		8E02AD272069A32C006580F8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C410B43E7D80A4439A2A63D8 /* Pods_SportLights.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportLights.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1948878293989BB987160FB /* Pods-SportLightsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportLightsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportLightsUITests/Pods-SportLightsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D51D9551CF77483A850CA28E /* Pods_SportLightsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportLightsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				8E02AD2520699EAF006580F8 /* LoginViewController.swift */,
-				8E02AD272069A32C006580F8 /* HomeViewController.swift */,
 				542C00EF2072E21F0061F45B /* SportsListViewController.swift */,
 				542C3498207454EE00AC4EBF /* TeamListViewController.swift */,
 			);
@@ -484,7 +481,6 @@
 				8E02AD2620699EAF006580F8 /* LoginViewController.swift in Sources */,
 				5451F5AF2058B3BC00122197 /* AppDelegate.swift in Sources */,
 				542C00F02072E21F0061F45B /* SportsListViewController.swift in Sources */,
-				8E02AD282069A32C006580F8 /* HomeViewController.swift in Sources */,
 				542C3499207454EE00AC4EBF /* TeamListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

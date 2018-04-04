@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import Parse
 
 class SportsListViewController: UIViewController {
 
+    @IBOutlet weak var mainMenuButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var chooseSportLabel: UILabel!
     @IBOutlet weak var nflImageView: UIImageView!
     @IBOutlet weak var nhlImageView: UIImageView!
     @IBOutlet weak var nbaImageView: UIImageView!
     @IBOutlet weak var mlbImageView: UIImageView!
     var sportChosen:String!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,17 +40,17 @@ class SportsListViewController: UIViewController {
         mlbImageView.addGestureRecognizer(mlbTapGesture)
         mlbImageView.isUserInteractionEnabled = true
         
+        if PFUser.current() == nil{
+            logoutButton.isHidden = true
+        }else{
+            logoutButton.isHidden = false
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func onMainMenuPressed(_ sender: Any) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "login") as! LoginViewController
-        self.present(newViewController, animated: true, completion: nil)
     }
     
     @objc func nflTapped(gesture: UIGestureRecognizer) {
@@ -81,7 +84,15 @@ class SportsListViewController: UIViewController {
         }
     }
     
+    @IBAction func onLogoutPressed(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
+    }
     
+    @IBAction func onMainMenuPressed(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "login") as! LoginViewController
+        self.present(newViewController, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
