@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yMK-dO-0IO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -57,13 +57,13 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="SportLightsTextImage" translatesAutoresizingMaskIntoConstraints="NO" id="RYQ-OF-0Ko">
-                                <rect key="frame" x="16" y="36" width="343" height="181"/>
+                                <rect key="frame" x="16" y="80" width="343" height="137"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbp-hV-ZN6">
                                 <rect key="frame" x="129" y="436" width="116" height="30"/>
                                 <state key="normal" title="Search for team"/>
                                 <connections>
-                                    <segue destination="hlT-m7-MVA" kind="presentation" id="WuT-Yt-fXl"/>
+                                    <segue destination="MF7-4z-3Uw" kind="show" id="0Ug-AX-YSM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -97,6 +97,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Gwq-iB-fFd"/>
                     <connections>
                         <outlet property="password" destination="ISx-Cb-bOh" id="LNs-LD-csS"/>
                         <outlet property="userName" destination="Qbh-RF-3jv" id="4vc-PW-csH"/>
@@ -105,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-287.19999999999999" y="131.78410794602701"/>
+            <point key="canvasLocation" x="652" y="131.78410794602701"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="GBU-KB-8cL">
@@ -127,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7i-Vi-GFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1641" y="132"/>
+            <point key="canvasLocation" x="2580" y="131.78410794602701"/>
         </scene>
         <!--Sports List View Controller-->
         <scene sceneID="j08-El-76q">
@@ -192,22 +193,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dra-bc-xw9"/>
                     </view>
-                    <navigationItem key="navigationItem" id="JUY-r5-dyL">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="eXD-im-Kib">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kiw-zD-DMa">
-                                <rect key="frame" x="16" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Main Menu"/>
-                            </button>
-                            <connections>
-                                <action selector="onMainMenuPressed:" destination="MF7-4z-3Uw" id="Zsi-Tg-0i3"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="JUY-r5-dyL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxu-Hs-nkn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1640.8" y="903.59820089955031"/>
+            <point key="canvasLocation" x="652" y="995"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7cm-q7-Lg9">
@@ -225,25 +215,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I44-oa-Z5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="690" y="132"/>
+            <point key="canvasLocation" x="1628" y="131.78410794602701"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="FMZ-yL-CiQ">
+        <scene sceneID="XWd-lJ-Tkf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hlT-m7-MVA" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yMK-dO-0IO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ikm-1x-bug">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kCf-fi-pI2">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="MF7-4z-3Uw" kind="relationship" relationship="rootViewController" id="bkt-W8-WXr"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nb9-5S-YWT"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iVS-qr-ptw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eDR-By-J6k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="689" y="904"/>
+            <point key="canvasLocation" x="-287.19999999999999" y="131.78410794602701"/>
         </scene>
     </scenes>
     <resources>
