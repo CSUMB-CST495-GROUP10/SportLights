@@ -11,6 +11,7 @@ import UIKit
 class TeamListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var teamsToDisplay = [""]
+    var imagesToDisplay = [UIImage(named: "raiders.gif")]
     var sportChosen:String!
     @IBOutlet weak var teamListTableView: UITableView!
     
@@ -46,6 +47,39 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         "Tampa Bay Buccaneers",
         "Tennessee Titans",
         "Washington Redskins"]
+    
+    let nflTeamLogos = [UIImage(named: "cardinals.gif"),
+                        UIImage(named: "falcons.gif"),
+                        UIImage(named: "ravens.gif"),
+                        UIImage(named: "bills.gif"),
+                        UIImage(named: "panthers.gif"),
+                        UIImage(named: "bears.gif"),
+                        UIImage(named: "bengals.gif"),
+                        UIImage(named: "browns.gif"),
+                        UIImage(named: "cowboys.gif"),
+                        UIImage(named: "broncos.gif"),
+                        UIImage(named: "lions.gif"),
+                        UIImage(named: "packers.gif"),
+                        UIImage(named: "texans.gif"),
+                        UIImage(named: "colts.gif"),
+                        UIImage(named: "jaguars.gif"),
+                        UIImage(named: "chiefs.gif"),
+                        UIImage(named: "dolphins.gif"),
+                        UIImage(named: "vikings.gif"),
+                        UIImage(named: "patriots.gif"),
+                        UIImage(named: "saints.gif"),
+                        UIImage(named: "giants.gif"),
+                        UIImage(named: "jets.gif"),
+                        UIImage(named: "raiders.png"),
+                        UIImage(named: "eagles.gif"),
+                        UIImage(named: "steelers.gif"),
+                        UIImage(named: "chargers.gif"),
+                        UIImage(named: "niners.gif"),
+                        UIImage(named: "seahawks.gif"),
+                        UIImage(named: "rams.gif"),
+                        UIImage(named: "buccaneers.gif"),
+                        UIImage(named: "titans.gif"),
+                        UIImage(named: "redskins.gif")]
     
     let nhlTeams = ["Anaheim Ducks",
         "Arizona Coyotes",
@@ -147,6 +181,7 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         // assign correct teams to display
         if sportChosen == "NFL"{
             teamsToDisplay = nflTeams
+            imagesToDisplay = nflTeamLogos
         }else if sportChosen == "NHL"{
             teamsToDisplay = nhlTeams
         }else if sportChosen == "NBA"{
@@ -162,8 +197,6 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         teamListTableView.dataSource = self
         
         teamListTableView.reloadData()
-//        teamListTableView.rowHeight = UITableViewAutomaticDimension
-//        teamListTableView.estimatedRowHeight = 220
     }
 
     override func didReceiveMemoryWarning() {
@@ -174,6 +207,7 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeamListCell", for: indexPath) as! TeamListCell
         cell.teamNameLabel?.text = teamsToDisplay[indexPath.item]
+        cell.teamImageView.image = nflTeamLogos[indexPath.row]
         return cell
     }
     
