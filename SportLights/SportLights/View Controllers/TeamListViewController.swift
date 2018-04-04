@@ -1,19 +1,22 @@
 //
-//  SportsListViewController.swift
+//  TeamListViewController.swift
 //  SportLights
 //
-//  Created by Diego Medina on 4/2/18.
+//  Created by Diego Medina on 4/3/18.
 //  Copyright © 2018 Diego Medina. All rights reserved.
 //
 
 import UIKit
 
-class SportsListViewController: UIViewController {
+class TeamListViewController: UIViewController {
 
+    var sportChosen:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        print("\n\n\n\nn\n\n\n\n\n\n\n\n\n\n")
+        print("sport chosen:" + sportChosen)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,12 +24,7 @@ class SportsListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onMainMenuPressed(_ sender: Any) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "login") as! LoginViewController
-        self.present(newViewController, animated: true, completion: nil)
-    }
-    
+
     /*
     // MARK: - Navigation
 

@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		542C00F02072E21F0061F45B /* SportsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542C00EF2072E21F0061F45B /* SportsListViewController.swift */; };
+		542C3499207454EE00AC4EBF /* TeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542C3498207454EE00AC4EBF /* TeamListViewController.swift */; };
 		5451F5AF2058B3BC00122197 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451F5AE2058B3BC00122197 /* AppDelegate.swift */; };
-		5451F5B12058B3BC00122197 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451F5B02058B3BC00122197 /* ViewController.swift */; };
 		5451F5B42058B3BC00122197 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5451F5B22058B3BC00122197 /* Main.storyboard */; };
 		5451F5B62058B3BC00122197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5451F5B52058B3BC00122197 /* Assets.xcassets */; };
 		5451F5B92058B3BC00122197 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5451F5B72058B3BC00122197 /* LaunchScreen.storyboard */; };
@@ -46,9 +46,9 @@
 		35C5330E6A83474F44DF596E /* Pods-SportLights.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportLights.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportLights/Pods-SportLights.debug.xcconfig"; sourceTree = "<group>"; };
 		428D1A9B6D9091D66BE5BFDD /* Pods-SportLightsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportLightsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportLightsTests/Pods-SportLightsTests.release.xcconfig"; sourceTree = "<group>"; };
 		542C00EF2072E21F0061F45B /* SportsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsListViewController.swift; sourceTree = "<group>"; };
+		542C3498207454EE00AC4EBF /* TeamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListViewController.swift; sourceTree = "<group>"; };
 		5451F5AB2058B3BC00122197 /* SportLights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportLights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5451F5AE2058B3BC00122197 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5451F5B02058B3BC00122197 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5451F5B32058B3BC00122197 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5451F5B52058B3BC00122197 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5451F5B82058B3BC00122197 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -108,6 +108,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		542C349A207454F500AC4EBF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8E02AD2520699EAF006580F8 /* LoginViewController.swift */,
+				8E02AD272069A32C006580F8 /* HomeViewController.swift */,
+				542C00EF2072E21F0061F45B /* SportsListViewController.swift */,
+				542C3498207454EE00AC4EBF /* TeamListViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		5451F5A22058B3BC00122197 = {
 			isa = PBXGroup;
 			children = (
@@ -133,15 +144,12 @@
 		5451F5AD2058B3BC00122197 /* SportLights */ = {
 			isa = PBXGroup;
 			children = (
+				542C349A207454F500AC4EBF /* View Controllers */,
 				5451F5AE2058B3BC00122197 /* AppDelegate.swift */,
-				5451F5B02058B3BC00122197 /* ViewController.swift */,
 				5451F5B22058B3BC00122197 /* Main.storyboard */,
 				5451F5B52058B3BC00122197 /* Assets.xcassets */,
 				5451F5B72058B3BC00122197 /* LaunchScreen.storyboard */,
 				5451F5BA2058B3BC00122197 /* Info.plist */,
-				8E02AD2520699EAF006580F8 /* LoginViewController.swift */,
-				8E02AD272069A32C006580F8 /* HomeViewController.swift */,
-				542C00EF2072E21F0061F45B /* SportsListViewController.swift */,
 			);
 			path = SportLights;
 			sourceTree = "<group>";
@@ -470,10 +478,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E02AD2620699EAF006580F8 /* LoginViewController.swift in Sources */,
-				5451F5B12058B3BC00122197 /* ViewController.swift in Sources */,
 				5451F5AF2058B3BC00122197 /* AppDelegate.swift in Sources */,
 				542C00F02072E21F0061F45B /* SportsListViewController.swift in Sources */,
 				8E02AD282069A32C006580F8 /* HomeViewController.swift in Sources */,
+				542C3499207454EE00AC4EBF /* TeamListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

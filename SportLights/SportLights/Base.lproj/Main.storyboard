@@ -63,7 +63,7 @@
                                 <rect key="frame" x="129" y="436" width="116" height="30"/>
                                 <state key="normal" title="Search for team"/>
                                 <connections>
-                                    <segue destination="MF7-4z-3Uw" kind="show" id="0Ug-AX-YSM"/>
+                                    <segue destination="MF7-4z-3Uw" kind="show" identifier="SportsListSegue" id="0Ug-AX-YSM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -195,15 +195,23 @@
                         <viewLayoutGuide key="safeArea" id="dra-bc-xw9"/>
                     </view>
                     <navigationItem key="navigationItem" id="JUY-r5-dyL"/>
+                    <connections>
+                        <outlet property="chooseSportLabel" destination="Ab0-bT-OtK" id="fEi-4T-f2Y"/>
+                        <outlet property="mlbImageView" destination="pcv-qO-Efc" id="PiY-lg-m9I"/>
+                        <outlet property="nbaImageView" destination="XKC-qU-bCO" id="RLV-M2-kUi"/>
+                        <outlet property="nflImageView" destination="o34-2J-2QQ" id="rPw-8M-Iiz"/>
+                        <outlet property="nhlImageView" destination="NTb-xb-pVU" id="QDz-Ub-k7O"/>
+                        <segue destination="Xlq-QB-X81" kind="show" identifier="TeamListSegue" id="Llm-CZ-3mn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxu-Hs-nkn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="652" y="995"/>
         </scene>
-        <!--View Controller-->
+        <!--Team List View Controller-->
         <scene sceneID="OrV-Uf-H93">
             <objects>
-                <viewController id="Xlq-QB-X81" sceneMemberID="viewController">
+                <viewController id="Xlq-QB-X81" customClass="TeamListViewController" customModule="SportLights" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vnN-jv-puG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
