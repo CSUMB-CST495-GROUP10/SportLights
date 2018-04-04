@@ -9,15 +9,17 @@
 import UIKit
 import Parse
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet var loginViewController: UIView!
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.userName.delegate = self
+        self.password.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +53,17 @@ class LoginViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    // hide keyboard when user presses anywhere outside the keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    // sign in when user presses enter in the password textfield
+    func passwordReturnedPressed(_ password: UITextField) -> Bool {
+        password.resignFirstResponder()
+        return true
     }
     
     
