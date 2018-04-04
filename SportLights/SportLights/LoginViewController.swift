@@ -28,17 +28,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func onSignIn(_ sender: Any) {
+        self.view.endEditing(true)
+        
         PFUser.logInWithUsername(inBackground: userName.text!, password: password.text!) { (user: PFUser?, error: Error?) in
             if(user != nil) {
                 print("You're logged in")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
                 print("Wrong username/password")
+                
+                self.createAlert(title: "Error", message: "Wrong username/password")
             }
         }
     }
     
     @IBAction func onSignUp(_ sender: Any) {
+        self.view.endEditing(true)
+        
         let newUser = PFUser()
         newUser.username = userName.text
         newUser.password = password.text
@@ -47,7 +53,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 print("Yay, Created a user!")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription as Any)
                 if(error?._code == 202) {
                     print("User name is taken")
                 }
@@ -64,6 +70,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func passwordReturnedPressed(_ password: UITextField) -> Bool {
         password.resignFirstResponder()
         return true
+    }
+    
+    func createAlert(title:String, message:String){
+        let alert = UIAlertController(title:title, message:message, preferredStyle:UIAlertControllerStyle.alert )
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+            (action) in alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     
