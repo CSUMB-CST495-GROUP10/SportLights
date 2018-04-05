@@ -250,13 +250,32 @@
                     <view key="view" contentMode="scaleToFill" id="qNR-uM-lUS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="mWK-xN-1hY">
+                                <rect key="frame" x="0.0" y="200" width="375" height="267"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mWK-xN-1hY" firstAttribute="trailing" secondItem="aLu-Jx-Dtx" secondAttribute="trailing" id="Vio-Nh-RSM"/>
+                            <constraint firstItem="aLu-Jx-Dtx" firstAttribute="bottom" secondItem="mWK-xN-1hY" secondAttribute="bottom" constant="200" id="dGF-Hi-FXD"/>
+                            <constraint firstItem="mWK-xN-1hY" firstAttribute="top" secondItem="aLu-Jx-Dtx" secondAttribute="top" constant="136" id="vLT-vg-jTB"/>
+                            <constraint firstItem="mWK-xN-1hY" firstAttribute="leading" secondItem="aLu-Jx-Dtx" secondAttribute="leading" id="wxZ-sS-cPl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aLu-Jx-Dtx"/>
                     </view>
+                    <connections>
+                        <outlet property="highlightWebView" destination="mWK-xN-1hY" id="sDe-Hg-oDs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1QG-ne-53s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3232.8000000000002" y="131.78410794602701"/>
+            <point key="canvasLocation" x="3260" y="132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XWd-lJ-Tkf">

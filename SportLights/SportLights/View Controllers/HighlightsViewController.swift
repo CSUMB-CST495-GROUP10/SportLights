@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import WebKit
 
 class HighlightsViewController: UIViewController {
 
+    @IBOutlet weak var highlightWebView: WKWebView!
     var teamName:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = teamName
+        getHighlightVideo(videoCode: "NtFe5PM87BU")
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,6 +26,10 @@ class HighlightsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func getHighlightVideo(videoCode:String){
+        let url = URL(string:"https://www.youtube.com/watch?v=\(videoCode)")
+        highlightWebView.load(URLRequest(url: url!))
+    }
 
     /*
     // MARK: - Navigation
