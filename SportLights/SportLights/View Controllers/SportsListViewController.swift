@@ -23,6 +23,13 @@ class SportsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // only shows logout if user is logged in
+        if PFUser.current() == nil{
+            logoutButton.isHidden = true
+        }else{
+            logoutButton.isHidden = false
+        }
+        
         let nflTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.nflTapped(gesture:)))
         let nhlTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.nhlTapped(gesture:)))
         let nbaTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.nbaTapped(gesture:)))
@@ -39,13 +46,6 @@ class SportsListViewController: UIViewController {
         
         mlbImageView.addGestureRecognizer(mlbTapGesture)
         mlbImageView.isUserInteractionEnabled = true
-        
-        if PFUser.current() == nil{
-            logoutButton.isHidden = true
-        }else{
-            logoutButton.isHidden = false
-        }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,13 +77,6 @@ class SportsListViewController: UIViewController {
         performSegue(withIdentifier: "TeamListSegue", sender: Any?.self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let data = Data()
-        if let destinationViewController = segue.destination as? TeamListViewController {
-            destinationViewController.sportChosen = sportChosen
-        }
-    }
-    
     @IBAction func onLogoutPressed(_ sender: Any) {
         NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
     }
@@ -93,6 +86,13 @@ class SportsListViewController: UIViewController {
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "login") as! LoginViewController
         self.present(newViewController, animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationViewController = segue.destination as? TeamListViewController {
+            destinationViewController.sportChosen = sportChosen
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

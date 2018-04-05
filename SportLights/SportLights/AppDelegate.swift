@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // view controller currently being set in Storyboard as default will be overridden
             //   let loggedInViewController = storyboard.instantiateViewController(withIdentifier: "tabBar")
             // self.window?.rootViewController = loggedInViewController
-            let loginViewController = storyboard.instantiateViewController(withIdentifier: "SportsList")
+            let loginViewController = storyboard.instantiateViewController(withIdentifier: "navConToSportsList")
             window?.rootViewController = loginViewController
         }
         

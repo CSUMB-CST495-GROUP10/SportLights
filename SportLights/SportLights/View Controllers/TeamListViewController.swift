@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Parse
 
 class TeamListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var logoutButton: UIButton!
     var teamsToDisplay = [""]
     var imagesToDisplay = [UIImage(named: "raiders.gif")] // default value to be overwritten
     var sportChosen:String!
@@ -272,6 +274,13 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // only shows logout if user is logged in
+        if PFUser.current() == nil{
+            logoutButton.isHidden = true
+        }else{
+            logoutButton.isHidden = false
+        }
+        
         // assign correct teams to display
         if sportChosen == "NFL"{
             teamsToDisplay = nflTeams
@@ -286,8 +295,6 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
             teamsToDisplay = mlbTeams
             imagesToDisplay = mlbTeamLogos
         }
-        
-        teamListTableView.reloadData()
 
         self.title = sportChosen
         teamListTableView.delegate = self
@@ -312,7 +319,21 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         return teamsToDisplay.count
     }
     
-
+    @IBAction func onLogoutButtonPressed(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let cell = sender as! UITableViewCell
+        
+        if let indexPath = teamListTableView.indexPath(for: cell){
+            let teamName = teamsToDisplay[indexPath.row]
+            let detailViewController = segue.destination as! HighlightsViewController
+            detailViewController.teamName = teamName
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
