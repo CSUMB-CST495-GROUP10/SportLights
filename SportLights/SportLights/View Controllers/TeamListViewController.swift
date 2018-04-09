@@ -9,8 +9,14 @@
 import UIKit
 import Parse
 
-class TeamListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TeamListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,
+                              UISearchBarDelegate{
 
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    var isSearching = false
+    var filteredTeamsToDisplay = [String]()
+    
     @IBOutlet weak var logoutButton: UIButton!
     var teamsToDisplay = [""]
     var imagesToDisplay = [UIImage(named: "raiders.gif")] // default value to be overwritten
@@ -295,7 +301,12 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
             teamsToDisplay = mlbTeams
             imagesToDisplay = mlbTeamLogos
         }
-
+        
+        // searchbar
+        searchBar.delegate = self
+        searchBar.returnKeyType = UIReturnKeyType.done
+        
+        // change title to team chosen
         self.title = sportChosen
         teamListTableView.delegate = self
         teamListTableView.dataSource = self
@@ -310,12 +321,22 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeamListCell", for: indexPath) as! TeamListCell
-        cell.teamNameLabel?.text = teamsToDisplay[indexPath.item]
-        cell.teamImageView.image = imagesToDisplay[indexPath.item]
+        
+        if isSearching{
+            cell.teamNameLabel?.text = filteredTeamsToDisplay[indexPath.item]
+        }else{
+            cell.teamNameLabel?.text = teamsToDisplay[indexPath.item]
+            cell.teamImageView.image = imagesToDisplay[indexPath.item]
+            print(teamsToDisplay[indexPath.item])
+        }
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isSearching{
+            return filteredTeamsToDisplay.count
+        }
         return teamsToDisplay.count
     }
     
@@ -324,13 +345,23 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         let cell = sender as! UITableViewCell
-        
         if let indexPath = teamListTableView.indexPath(for: cell){
             let teamName = teamsToDisplay[indexPath.row]
             let detailViewController = segue.destination as! HighlightsViewController
             detailViewController.teamName = teamName
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == ""{
+            isSearching = false
+            view.endEditing(true)
+            teamListTableView.reloadData()
+        }else{
+            isSearching = true
+            filteredTeamsToDisplay = teamsToDisplay.filter({($0.lowercased().contains(searchBar.text!.lowercased()))})
+            teamListTableView.reloadData()
         }
     }
     
