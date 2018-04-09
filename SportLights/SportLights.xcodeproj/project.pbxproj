@@ -110,6 +110,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		541325832076CCD400C2348E /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		542C349A207454F500AC4EBF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +153,7 @@
 		5451F5AD2058B3BC00122197 /* SportLights */ = {
 			isa = PBXGroup;
 			children = (
+				541325832076CCD400C2348E /* API */,
 				542C349A207454F500AC4EBF /* View Controllers */,
 				5451F5AE2058B3BC00122197 /* AppDelegate.swift */,
 				5451F5B22058B3BC00122197 /* Main.storyboard */,
@@ -412,13 +420,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SportLights/Pods-SportLights-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
