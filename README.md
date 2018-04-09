@@ -14,11 +14,11 @@ The following **required** functionality is completed:
 - [x] User can sign in 
 - [x] User can Logout. 
 - [x] persistance login
-- [ ] User sees a list of teams to pick from
-- [ ] User can pick a sport from the list
+- [x] User sees a list of teams to pick from
+- [x] User can pick a sport from the list
 - [ ] User can use a search bar to choose a team 
 - [ ] User can pull to refresh. 
-- [ ] Using AutoLayout, the sports cell should adjust it's layout for iPhone 8, Plus and SE device sizes as well as accommodate device rotation. 
+- [x] Using AutoLayout, the sports cell should adjust it's layout for iPhone 8, Plus and SE device sizes as well as accommodate device rotation. 
 
 The following **stretch** features are implemented:
 - [ ] User can save highlights videos to their playlist
