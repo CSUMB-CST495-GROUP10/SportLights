@@ -17,6 +17,7 @@
 		5451F5C42058B3BC00122197 /* SportLightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451F5C32058B3BC00122197 /* SportLightsTests.swift */; };
 		5451F5CF2058B3BC00122197 /* SportLightsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451F5CE2058B3BC00122197 /* SportLightsUITests.swift */; };
 		5469830020758461008C0E54 /* HighlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546982FF20758461008C0E54 /* HighlightsViewController.swift */; };
+		547C0A11207C903E00C0AF74 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547C0A10207C903E00C0AF74 /* ProfileViewController.swift */; };
 		7D5CB41E7A58D3CFEBCEF80A /* Pods_SportLights.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C410B43E7D80A4439A2A63D8 /* Pods_SportLights.framework */; };
 		8E02AD2620699EAF006580F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E02AD2520699EAF006580F8 /* LoginViewController.swift */; };
 		E870CAD088BEA1DBE73D8023 /* Pods_SportLightsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29AA3F01CD666DAC96488203 /* Pods_SportLightsUITests.framework */; };
@@ -62,6 +63,7 @@
 		5451F5CE2058B3BC00122197 /* SportLightsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportLightsUITests.swift; sourceTree = "<group>"; };
 		5451F5D02058B3BC00122197 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		546982FF20758461008C0E54 /* HighlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsViewController.swift; sourceTree = "<group>"; };
+		547C0A10207C903E00C0AF74 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8E02AD2520699EAF006580F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C410B43E7D80A4439A2A63D8 /* Pods_SportLights.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportLights.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1948878293989BB987160FB /* Pods-SportLightsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportLightsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportLightsUITests/Pods-SportLightsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,13 +112,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		541325832076CCD400C2348E /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
 		542C349A207454F500AC4EBF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +119,7 @@
 				542C00EF2072E21F0061F45B /* SportsListViewController.swift */,
 				542C3498207454EE00AC4EBF /* TeamListViewController.swift */,
 				546982FF20758461008C0E54 /* HighlightsViewController.swift */,
+				547C0A10207C903E00C0AF74 /* ProfileViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -153,7 +149,6 @@
 		5451F5AD2058B3BC00122197 /* SportLights */ = {
 			isa = PBXGroup;
 			children = (
-				541325832076CCD400C2348E /* API */,
 				542C349A207454F500AC4EBF /* View Controllers */,
 				5451F5AE2058B3BC00122197 /* AppDelegate.swift */,
 				5451F5B22058B3BC00122197 /* Main.storyboard */,
@@ -496,6 +491,7 @@
 				5469830020758461008C0E54 /* HighlightsViewController.swift in Sources */,
 				8E02AD2620699EAF006580F8 /* LoginViewController.swift in Sources */,
 				5451F5AF2058B3BC00122197 /* AppDelegate.swift in Sources */,
+				547C0A11207C903E00C0AF74 /* ProfileViewController.swift in Sources */,
 				542C00F02072E21F0061F45B /* SportsListViewController.swift in Sources */,
 				542C3499207454EE00AC4EBF /* TeamListViewController.swift in Sources */,
 			);

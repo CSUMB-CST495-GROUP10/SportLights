@@ -327,7 +327,6 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         }else{
             cell.teamNameLabel?.text = teamsToDisplay[indexPath.item]
             cell.teamImageView.image = imagesToDisplay[indexPath.item]
-            print(teamsToDisplay[indexPath.item])
         }
 
         return cell

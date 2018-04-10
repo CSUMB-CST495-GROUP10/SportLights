@@ -12,6 +12,7 @@ import Parse
 class SportsListViewController: UIViewController {
 
     @IBOutlet weak var mainMenuButton: UIButton!
+    @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var chooseSportLabel: UILabel!
     @IBOutlet weak var nflImageView: UIImageView!
@@ -26,8 +27,10 @@ class SportsListViewController: UIViewController {
         // only shows logout if user is logged in
         if PFUser.current() == nil{
             logoutButton.isHidden = true
+            profileButton.isHidden = true
         }else{
             logoutButton.isHidden = false
+            profileButton.isHidden = false
         }
         
         let nflTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.nflTapped(gesture:)))
