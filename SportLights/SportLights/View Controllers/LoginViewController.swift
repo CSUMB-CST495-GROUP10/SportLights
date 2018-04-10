@@ -18,6 +18,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // only shows logout if user is logged in
+        if PFUser.current() == nil{
+
+        }else{
+
+        }
+        
         self.userName.delegate = self
         self.password.delegate = self
     }
