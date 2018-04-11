@@ -11,18 +11,23 @@ import Parse
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var loginChildView: UIView!
     @IBOutlet var loginViewController: UIView!
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var profileButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // only shows logout if user is logged in
+        // user can only login if no one else is logged in
         if PFUser.current() == nil{
-
+            loginChildView.isHidden = false
+            logoutButton.isHidden = true
         }else{
-
+            loginChildView.isHidden = true
+            logoutButton.isHidden = false
         }
         
         self.userName.delegate = self
@@ -88,6 +93,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func onLogoutPressed(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
+    }
+    
+    @IBAction func onProfilePressed(_ sender: Any) {
+    }
     
     /*
     // MARK: - Navigation
