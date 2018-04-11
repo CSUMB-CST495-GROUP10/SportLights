@@ -36,8 +36,31 @@
                                     <segue destination="qLw-EA-3AR" kind="show" identifier="SportsListSegue" id="0Ug-AX-YSM"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LG4-Jv-hIl">
+                                <rect key="frame" x="89" y="609" width="196" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxr-y6-J4w">
+                                        <rect key="frame" x="144" y="8" width="44" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Profile"/>
+                                        <connections>
+                                            <action selector="onProfilePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pug-9X-WrK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYT-ll-w1x">
+                                        <rect key="frame" x="8" y="8" width="48" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Logout"/>
+                                        <connections>
+                                            <action selector="onLogoutPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rU9-t7-6uv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O2v-QX-31t">
-                                <rect key="frame" x="0.0" y="332" width="375" height="231"/>
+                                <rect key="frame" x="0.0" y="315" width="375" height="231"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- OR -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYJ-Ae-B9o">
@@ -96,30 +119,11 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxr-y6-J4w">
-                                <rect key="frame" x="248" y="617" width="44" height="30"/>
-                                <state key="normal" title="Profile"/>
-                                <connections>
-                                    <action selector="onProfilePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pug-9X-WrK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYT-ll-w1x">
-                                <rect key="frame" x="83" y="617" width="48" height="30"/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="onLogoutPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rU9-t7-6uv"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="w3G-W2-3t5" firstAttribute="trailing" secondItem="Cxr-y6-J4w" secondAttribute="trailing" constant="83" id="NRi-Hp-6Jt"/>
-                            <constraint firstItem="Cxr-y6-J4w" firstAttribute="leading" secondItem="iYT-ll-w1x" secondAttribute="trailing" constant="117" id="TEb-g1-C3f"/>
                             <constraint firstItem="RYQ-OF-0Ko" firstAttribute="top" secondItem="w3G-W2-3t5" secondAttribute="top" constant="23" id="YCO-Ap-CbW"/>
-                            <constraint firstItem="w3G-W2-3t5" firstAttribute="bottom" secondItem="Cxr-y6-J4w" secondAttribute="bottom" constant="20" id="dYu-Ve-xZs"/>
                             <constraint firstItem="Mbp-hV-ZN6" firstAttribute="top" secondItem="RYQ-OF-0Ko" secondAttribute="bottom" constant="8" id="eY2-C9-Ys0"/>
-                            <constraint firstItem="w3G-W2-3t5" firstAttribute="bottom" secondItem="iYT-ll-w1x" secondAttribute="bottom" constant="20" id="gTe-Sf-qNh"/>
-                            <constraint firstItem="iYT-ll-w1x" firstAttribute="leading" secondItem="w3G-W2-3t5" secondAttribute="leading" constant="83" id="gXz-vH-civ"/>
                             <constraint firstItem="Mbp-hV-ZN6" firstAttribute="leading" secondItem="w3G-W2-3t5" secondAttribute="leading" constant="83" id="hJv-XL-VzX"/>
                             <constraint firstItem="RYQ-OF-0Ko" firstAttribute="leading" secondItem="w3G-W2-3t5" secondAttribute="leading" constant="16" id="koI-NE-Wxh"/>
                             <constraint firstItem="w3G-W2-3t5" firstAttribute="trailing" secondItem="RYQ-OF-0Ko" secondAttribute="trailing" constant="16" id="na9-37-0Pz"/>
@@ -130,6 +134,7 @@
                     <navigationItem key="navigationItem" id="Gwq-iB-fFd"/>
                     <connections>
                         <outlet property="loginChildView" destination="O2v-QX-31t" id="VBM-JI-TwR"/>
+                        <outlet property="loginChildViewWithLogoutAndProfileButton" destination="LG4-Jv-hIl" id="4uJ-XJ-dEf"/>
                         <outlet property="loginViewController" destination="8bC-Xf-vdC" id="v6j-Dq-Eag"/>
                         <outlet property="logoutButton" destination="iYT-ll-w1x" id="fVB-Qo-uFF"/>
                         <outlet property="password" destination="ISx-Cb-bOh" id="LNs-LD-csS"/>

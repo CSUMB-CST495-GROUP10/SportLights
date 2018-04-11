@@ -12,6 +12,7 @@ import Parse
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var loginChildView: UIView!
+    @IBOutlet weak var loginChildViewWithLogoutAndProfileButton: UIView!
     @IBOutlet var loginViewController: UIView!
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -24,9 +25,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // user can only login if no one else is logged in
         if PFUser.current() == nil{
             loginChildView.isHidden = false
+            loginChildViewWithLogoutAndProfileButton.isHidden = true
             logoutButton.isHidden = true
         }else{
             loginChildView.isHidden = true
+            loginChildViewWithLogoutAndProfileButton.center = self.view.center
+            loginChildViewWithLogoutAndProfileButton.isHidden = false
             logoutButton.isHidden = false
         }
         
