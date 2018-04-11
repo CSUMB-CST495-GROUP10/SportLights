@@ -11,9 +11,8 @@ import Parse
 
 class SportsListViewController: UIViewController {
 
-    @IBOutlet weak var mainMenuButton: UIButton!
+    @IBOutlet weak var signInUpButton: UIButton!
     @IBOutlet weak var profileButton: UIButton!
-    @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var chooseSportLabel: UILabel!
     @IBOutlet weak var nflImageView: UIImageView!
     @IBOutlet weak var nhlImageView: UIImageView!
@@ -26,11 +25,11 @@ class SportsListViewController: UIViewController {
 
         // only shows logout if user is logged in
         if PFUser.current() == nil{
-            logoutButton.isHidden = true
             profileButton.isHidden = true
+            signInUpButton.isHidden = false
         }else{
-            logoutButton.isHidden = false
             profileButton.isHidden = false
+            signInUpButton.isHidden = true
         }
         
         let nflTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.nflTapped(gesture:)))
@@ -80,15 +79,6 @@ class SportsListViewController: UIViewController {
         performSegue(withIdentifier: "TeamListSegue", sender: Any?.self)
     }
     
-    @IBAction func onLogoutPressed(_ sender: Any) {
-        NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
-    }
-    
-    @IBAction func onMainMenuPressed(_ sender: Any) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "login") as! LoginViewController
-        self.present(newViewController, animated: true, completion: nil)
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = segue.destination as? TeamListViewController {
@@ -96,6 +86,7 @@ class SportsListViewController: UIViewController {
         }
     }
     
+
     /*
     // MARK: - Navigation
 

@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileViewController: UIViewController{
 
+    @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var dateCreatedLabel: UILabel!
@@ -28,7 +29,10 @@ class ProfileViewController: UIViewController{
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func onLogoutPressed(_ sender: Any) {
+         NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

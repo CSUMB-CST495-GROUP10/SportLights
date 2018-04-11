@@ -11,13 +11,12 @@ import Parse
 
 class TeamListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,
                               UISearchBarDelegate{
-
-    
+  
+    @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     var isSearching = false
     var filteredTeamsToDisplay = [String]()
     
-    @IBOutlet weak var logoutButton: UIButton!
     var teamsToDisplay = [""]
     var imagesToDisplay = [UIImage(named: "raiders.gif")] // default value to be overwritten
     var sportChosen:String!
@@ -282,9 +281,9 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // only shows logout if user is logged in
         if PFUser.current() == nil{
-            logoutButton.isHidden = true
+//            profileButton.isHidden = true
         }else{
-            logoutButton.isHidden = false
+//            profileButton.isHidden = false
         }
         
         // assign correct teams to display
@@ -339,9 +338,7 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         return teamsToDisplay.count
     }
     
-    @IBAction func onLogoutButtonPressed(_ sender: Any) {
-        NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
-    }
+ 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! UITableViewCell
@@ -364,6 +361,15 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
+    @IBAction func onProfilePressed(_ sender: Any) {
+        
+        print("hello")
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Profile") as! ProfileViewController
+        self.present(nextViewController, animated:true, completion:nil)
+    }
     /*
     // MARK: - Navigation
 

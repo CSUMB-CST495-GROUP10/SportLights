@@ -21,9 +21,9 @@ class HighlightsViewController: UIViewController {
         
         // only shows logout if user is logged in
         if PFUser.current() == nil{
-            profileButton.isHidden = true
+//            profileButton.isHidden = true
         }else{
-            profileButton.isHidden = false
+//            profileButton.isHidden = false
         }
         
         self.title = teamName

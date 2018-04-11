@@ -11,27 +11,19 @@ import Parse
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var loginChildView: UIView!
-    @IBOutlet weak var loginChildViewWithLogoutAndProfileButton: UIView!
     @IBOutlet var loginViewController: UIView!
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var logoutButton: UIButton!
-    @IBOutlet weak var profileButton: UIButton!
+    var window: UIWindow?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // user can only login if no one else is logged in
         if PFUser.current() == nil{
-            loginChildView.isHidden = false
-            loginChildViewWithLogoutAndProfileButton.isHidden = true
-            logoutButton.isHidden = true
+            
         }else{
-            loginChildView.isHidden = true
-            loginChildViewWithLogoutAndProfileButton.center = self.view.center
-            loginChildViewWithLogoutAndProfileButton.isHidden = false
-            logoutButton.isHidden = false
+            
         }
         
         self.userName.delegate = self
@@ -48,8 +40,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         PFUser.logInWithUsername(inBackground: userName.text!, password: password.text!) { (user: PFUser?, error: Error?) in
             if(user != nil) {
-                print("You're logged in")
-                self.performSegue(withIdentifier: "SportsListSegue", sender: nil)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyboard.instantiateViewController(withIdentifier: "navConToSportsList")
+                self.present(newViewController, animated: false, completion: nil)
             } else {
                 print("Wrong username/password")
                 self.createAlert(title: "Error", message: "Wrong username/password")
@@ -65,8 +58,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         newUser.password = password.text
         newUser.signUpInBackground { (success: Bool, error: Error?) in
             if(success) {
-                print("Yay, Created a user!")
-                self.performSegue(withIdentifier: "SportsListSegue", sender: nil)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyboard.instantiateViewController(withIdentifier: "navConToSportsList")
+                self.present(newViewController, animated: false, completion: nil)
             } else {
                 print(error?.localizedDescription as Any)
                 if(error?._code == 202) {
@@ -101,8 +95,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
     }
     
-    @IBAction func onProfilePressed(_ sender: Any) {
-    }
     
     /*
     // MARK: - Navigation
