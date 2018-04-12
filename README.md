@@ -2,7 +2,7 @@
 
 **SportLights** is a basic sports highlights app to displays the video of the highlights of the teams last game
 
-Time spent:**X** hours spent in total
+Time spent:**60** hours spent in total
 
 ## User Stories
 
@@ -16,14 +16,14 @@ The following **required** functionality is completed:
 - [x] persistance login
 - [x] User sees a list of teams to pick from
 - [x] User can pick a sport from the list
-- [ ] User can use a search bar to choose a team 
-- [ ] User can pull to refresh. 
+- [x] User can use a search bar to choose a team 
 - [x] Using AutoLayout, the sports cell should adjust it's layout for iPhone 8, Plus and SE device sizes as well as accommodate device rotation. 
 
 The following **stretch** features are implemented:
 - [ ] User can save highlights videos to their playlist
 - [ ] User can save their favorite teams.
 - [ ] User can view their top favorite team highlights when application opens.
+- [ ] User can pull to refresh. 
 
 The following **additional** features are implemented:
 
@@ -79,7 +79,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/MaNphf0.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/9dUF2wm.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
