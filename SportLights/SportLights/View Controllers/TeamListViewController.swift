@@ -37,7 +37,7 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // assign correct teams to display
         setTeamsToDisplay(sportsLeague: sportChosen)
-
+        
         self.title = sportChosen
         teamListTableView.delegate = self
         teamListTableView.dataSource = self
@@ -52,6 +52,7 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeamListCell", for: indexPath) as! TeamListCell
+        cell.selectionStyle = .none
         cell.teamNameLabel?.text = teamsToDisplay[indexPath.row].location + " " + teamsToDisplay[indexPath.row].name
         cell.teamImageView.image = UIImage(named: teamsToDisplay[indexPath.row].logoPath)
         return cell
@@ -71,8 +72,10 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if let indexPath = teamListTableView.indexPath(for: cell){
             let teamName = teamsToDisplay[indexPath.row].name
+            let location = teamsToDisplay[indexPath.row].location
             let detailViewController = segue.destination as! HighlightsViewController
             detailViewController.teamName = teamName
+            detailViewController.teamLocation = location
         }
     }
     
