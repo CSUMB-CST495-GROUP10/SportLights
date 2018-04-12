@@ -15,13 +15,18 @@ class ProfileViewController: UIViewController{
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var dateCreatedLabel: UILabel!
-    @IBOutlet weak var editProfileButton: UIButton!
     @IBOutlet weak var teamsFollowingLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let date = PFUser.current()?.createdAt
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd,yyyy"
+        let stringDate = dateFormatter.string(from: date as! Date)
+        dateCreatedLabel.text = stringDate
+        userNameLabel.text = PFUser.current()?.username
     }
 
     override func didReceiveMemoryWarning() {

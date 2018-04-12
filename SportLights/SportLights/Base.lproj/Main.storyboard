@@ -139,8 +139,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date created" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02q-05-VYV">
-                                <rect key="frame" x="140" y="101" width="109" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="249" y="101" width="88" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -189,30 +189,30 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h85-te-ZwE">
-                                <rect key="frame" x="140" y="226" width="75" height="30"/>
-                                <state key="normal" title="Edit Profile"/>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Member since:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oq7-Fr-1fz">
+                                <rect key="frame" x="140" y="101" width="101" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VCF-rP-6IL" firstAttribute="bottom" secondItem="CsF-8i-IaT" secondAttribute="bottom" id="4JE-t2-a2T"/>
                             <constraint firstItem="qcJ-bG-jXv" firstAttribute="leading" secondItem="CsF-8i-IaT" secondAttribute="leading" constant="8" id="8FB-Bi-qdy"/>
-                            <constraint firstItem="h85-te-ZwE" firstAttribute="top" secondItem="02q-05-VYV" secondAttribute="bottom" constant="104" id="8Na-0P-lES"/>
                             <constraint firstItem="9CM-bn-KSb" firstAttribute="top" secondItem="CsF-8i-IaT" secondAttribute="top" constant="8" id="8Sd-i2-CYE"/>
                             <constraint firstItem="oAw-CY-KJx" firstAttribute="top" secondItem="CsF-8i-IaT" secondAttribute="top" constant="8" id="9qP-SM-s6E"/>
                             <constraint firstItem="02q-05-VYV" firstAttribute="top" secondItem="9CM-bn-KSb" secondAttribute="bottom" constant="8" id="Biu-TM-eP6"/>
-                            <constraint firstItem="CsF-8i-IaT" firstAttribute="trailing" secondItem="02q-05-VYV" secondAttribute="trailing" constant="126" id="Dqi-w9-qDf"/>
                             <constraint firstItem="9CM-bn-KSb" firstAttribute="leading" secondItem="oAw-CY-KJx" secondAttribute="trailing" constant="8" id="IZx-Mc-xjv"/>
+                            <constraint firstItem="Oq7-Fr-1fz" firstAttribute="leading" secondItem="oAw-CY-KJx" secondAttribute="trailing" constant="8" id="KZj-0q-kwE"/>
                             <constraint firstItem="oAw-CY-KJx" firstAttribute="leading" secondItem="CsF-8i-IaT" secondAttribute="leading" constant="8" id="MuQ-dW-cj0"/>
                             <constraint firstItem="VCF-rP-6IL" firstAttribute="leading" secondItem="CsF-8i-IaT" secondAttribute="leading" id="Ol3-KR-dTM"/>
-                            <constraint firstItem="h85-te-ZwE" firstAttribute="bottom" secondItem="oAw-CY-KJx" secondAttribute="bottom" id="SRi-Ta-O4c"/>
                             <constraint firstItem="CsF-8i-IaT" firstAttribute="trailing" secondItem="9CM-bn-KSb" secondAttribute="trailing" constant="144" id="Ukv-lb-68L"/>
+                            <constraint firstItem="02q-05-VYV" firstAttribute="leading" secondItem="Oq7-Fr-1fz" secondAttribute="trailing" constant="8" id="Xz5-Kk-gpd"/>
                             <constraint firstItem="VCF-rP-6IL" firstAttribute="trailing" secondItem="CsF-8i-IaT" secondAttribute="trailing" id="b9I-I7-ToF"/>
-                            <constraint firstItem="h85-te-ZwE" firstAttribute="leading" secondItem="oAw-CY-KJx" secondAttribute="trailing" constant="8" id="cOm-Sg-R0W"/>
                             <constraint firstItem="VCF-rP-6IL" firstAttribute="top" secondItem="qcJ-bG-jXv" secondAttribute="bottom" constant="8" id="fya-uv-HRK"/>
+                            <constraint firstItem="Oq7-Fr-1fz" firstAttribute="top" secondItem="9CM-bn-KSb" secondAttribute="bottom" constant="8" id="ukR-ij-WoO"/>
                             <constraint firstItem="qcJ-bG-jXv" firstAttribute="top" secondItem="oAw-CY-KJx" secondAttribute="bottom" constant="16" id="vqK-iq-ulT"/>
-                            <constraint firstItem="02q-05-VYV" firstAttribute="leading" secondItem="oAw-CY-KJx" secondAttribute="trailing" constant="8" id="vy3-Dw-XP5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CsF-8i-IaT"/>
                     </view>
@@ -230,7 +230,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dateCreatedLabel" destination="02q-05-VYV" id="Hz0-pO-VfZ"/>
-                        <outlet property="editProfileButton" destination="h85-te-ZwE" id="o5Y-x7-wFA"/>
                         <outlet property="logoutButton" destination="Rua-Js-5kW" id="Aok-CM-ehM"/>
                         <outlet property="profileImage" destination="oAw-CY-KJx" id="3rz-4E-ENR"/>
                         <outlet property="tableView" destination="VCF-rP-6IL" id="3pb-0t-7kW"/>
