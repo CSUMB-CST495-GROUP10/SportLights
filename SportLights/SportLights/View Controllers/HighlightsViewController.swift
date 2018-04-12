@@ -13,19 +13,11 @@ import Parse
 class HighlightsViewController: UIViewController {
 
     @IBOutlet weak var highlightWebView: WKWebView!
-    @IBOutlet weak var profileButton: UIButton!
     var teamName:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // only shows logout if user is logged in
-        if PFUser.current() == nil{
-//            profileButton.isHidden = true
-        }else{
-//            profileButton.isHidden = false
-        }
-        
+
         self.title = teamName
         getHighlightVideo(videoCode: "NtFe5PM87BU")
     }

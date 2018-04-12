@@ -6,6 +6,7 @@
 //  Copyright © 2018 Diego Medina. All rights reserved.
 //
 
+import Parse
 import UIKit
 
 class ProfileViewController: UIViewController{
@@ -20,7 +21,6 @@ class ProfileViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
 
     }
 

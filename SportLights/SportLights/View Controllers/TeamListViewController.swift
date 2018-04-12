@@ -12,7 +12,6 @@ import Parse
 class TeamListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,
                               UISearchBarDelegate{
   
-    @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     var isSearching = false
     var filteredTeamsToDisplay = [String]()
@@ -279,13 +278,6 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // only shows logout if user is logged in
-        if PFUser.current() == nil{
-//            profileButton.isHidden = true
-        }else{
-//            profileButton.isHidden = false
-        }
-        
         // assign correct teams to display
         if sportChosen == "NFL"{
             teamsToDisplay = nflTeams
@@ -337,8 +329,6 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         return teamsToDisplay.count
     }
-    
- 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! UITableViewCell

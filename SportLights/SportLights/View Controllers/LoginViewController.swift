@@ -19,13 +19,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // user can only login if no one else is logged in
-        if PFUser.current() == nil{
-            
-        }else{
-            
-        }
-        
         self.userName.delegate = self
         self.password.delegate = self
     }
