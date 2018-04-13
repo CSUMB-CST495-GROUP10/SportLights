@@ -20,6 +20,8 @@ class HighlightsViewController: UIViewController {
 
         self.title = teamName
         getHighlightVideo(videoCode: "NtFe5PM87BU")
+        print("Team Name: " + teamName)
+        
     }
 
     override func didReceiveMemoryWarning() {
