@@ -9,6 +9,7 @@
 import UIKit
 import WebKit
 import Parse
+import Alamofire
 
 class HighlightsViewController: UIViewController {
 
@@ -30,8 +31,34 @@ class HighlightsViewController: UIViewController {
     }
     
     func getHighlightVideo(videoCode:String){
-        let url = URL(string:"https://www.youtube.com/watch?v=\(videoCode)")
-        highlightWebView.load(URLRequest(url: url!))
+        
+        //"https://www.youtube.com/watch?v="
+        //let url = URL(string:"https://www.youtube.com/watch?v=\(videoCode)")
+        //highlightWebView.load(URLRequest(url: url!))
+        Alamofire.request("https://www.googleapis.com/youtube/v3/search",
+                          parameters: ["part":"snippet", "q":teamName, "key":"AIzaSyCoZEg3PUGdUDL0vwn54XVeqhoPWKatEfQ"]).responseJSON {
+                            (response) in
+            if let JSON = response.result.value as? [String:Any]{
+                
+                for video in JSON["items"] as! NSArray {
+                    //var vid = (video as AnyObject).value(forKey: "id")
+                    //print(vid!["kind"])
+                    //vid.value(forKey: "videoId")
+                    var vid = (video as AnyObject).value(forKey: "id")
+                    vid = (vid as AnyObject).value(forKey: "videoId")
+                    let highlight = vid as! String
+                    print(highlight)
+                     let url = URL(string:"https://www.youtube.com/watch?v=\(highlight)")
+                    self.highlightWebView.load(URLRequest(url: url!))
+                    return
+                }
+                //print("VIDEO ID:", JSON[0].items.id.videoId);
+//                if let nestedDictionary = dictionary["anotherKey"] as? [String: Any] {
+//                    // access nested dictionary values by key
+//                }
+                //print("JSON:\(JSON)")
+            }
+        }
     }
 
     /*
