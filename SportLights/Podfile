@@ -1,5 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
 
 target 'SportLights' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -8,6 +9,8 @@ target 'SportLights' do
   # Pods for SportLights
 
     pod 'Parse'
+    pod 'Alamofire', '~> 4.7'
+    pod 'SDWebImage', '~> 4.0'
 
   target 'SportLightsTests' do
     inherit! :search_paths

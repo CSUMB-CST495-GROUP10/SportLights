@@ -17,6 +17,7 @@
 		5451F5C42058B3BC00122197 /* SportLightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451F5C32058B3BC00122197 /* SportLightsTests.swift */; };
 		5451F5CF2058B3BC00122197 /* SportLightsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451F5CE2058B3BC00122197 /* SportLightsUITests.swift */; };
 		5469830020758461008C0E54 /* HighlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546982FF20758461008C0E54 /* HighlightsViewController.swift */; };
+		547C0A11207C903E00C0AF74 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547C0A10207C903E00C0AF74 /* ProfileViewController.swift */; };
 		7D5CB41E7A58D3CFEBCEF80A /* Pods_SportLights.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C410B43E7D80A4439A2A63D8 /* Pods_SportLights.framework */; };
 		7E07B637207C1D0F00B0B98C /* sports_teams.csv in Resources */ = {isa = PBXBuildFile; fileRef = 7E07B636207C1D0F00B0B98C /* sports_teams.csv */; };
 		7E4FEEDA207C2AA200907ED4 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4FEED9207C2AA200907ED4 /* Team.swift */; };
@@ -68,6 +69,7 @@
 		7E07B636207C1D0F00B0B98C /* sports_teams.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sports_teams.csv; sourceTree = SOURCE_ROOT; };
 		7E4FEED9207C2AA200907ED4 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		7EB86542207EED3D0071C860 /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		547C0A10207C903E00C0AF74 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8E02AD2520699EAF006580F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C410B43E7D80A4439A2A63D8 /* Pods_SportLights.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportLights.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1948878293989BB987160FB /* Pods-SportLightsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportLightsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportLightsUITests/Pods-SportLightsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				542C00EF2072E21F0061F45B /* SportsListViewController.swift */,
 				542C3498207454EE00AC4EBF /* TeamListViewController.swift */,
 				546982FF20758461008C0E54 /* HighlightsViewController.swift */,
+				547C0A10207C903E00C0AF74 /* ProfileViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -439,13 +442,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SportLights/Pods-SportLights-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -512,6 +519,7 @@
 				7E4FEEDA207C2AA200907ED4 /* Team.swift in Sources */,
 				8E02AD2620699EAF006580F8 /* LoginViewController.swift in Sources */,
 				5451F5AF2058B3BC00122197 /* AppDelegate.swift in Sources */,
+				547C0A11207C903E00C0AF74 /* ProfileViewController.swift in Sources */,
 				542C00F02072E21F0061F45B /* SportsListViewController.swift in Sources */,
 				542C3499207454EE00AC4EBF /* TeamListViewController.swift in Sources */,
 			);

@@ -14,6 +14,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var loginViewController: UIView!
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
+    var window: UIWindow?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +33,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         PFUser.logInWithUsername(inBackground: userName.text!, password: password.text!) { (user: PFUser?, error: Error?) in
             if(user != nil) {
-                print("You're logged in")
-                self.performSegue(withIdentifier: "SportsListSegue", sender: nil)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyboard.instantiateViewController(withIdentifier: "navConToSportsList")
+                self.present(newViewController, animated: false, completion: nil)
             } else {
                 print("Wrong username/password")
                 self.createAlert(title: "Error", message: "Wrong username/password")
@@ -49,8 +51,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         newUser.password = password.text
         newUser.signUpInBackground { (success: Bool, error: Error?) in
             if(success) {
-                print("Yay, Created a user!")
-                self.performSegue(withIdentifier: "SportsListSegue", sender: nil)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyboard.instantiateViewController(withIdentifier: "navConToSportsList")
+                self.present(newViewController, animated: false, completion: nil)
             } else {
                 print(error?.localizedDescription as Any)
                 if(error?._code == 202) {
@@ -79,6 +82,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }))
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func onLogoutPressed(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
     }
     
     

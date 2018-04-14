@@ -13,6 +13,7 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBOutlet weak var logoutButton: UIButton!
     var teamsToDisplay : [Team] = []
+
     var imagesToDisplay = [UIImage(named: "raiders.gif")] // default value to be overwritten
     var sportChosen:String!
     @IBOutlet weak var teamListTableView: UITableView!
@@ -38,6 +39,7 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         // assign correct teams to display
         setTeamsToDisplay(sportsLeague: sportChosen)
         
+
         self.title = sportChosen
         teamListTableView.delegate = self
         teamListTableView.dataSource = self
@@ -55,21 +57,19 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.selectionStyle = .none
         cell.teamNameLabel?.text = teamsToDisplay[indexPath.row].location + " " + teamsToDisplay[indexPath.row].name
         cell.teamImageView.image = UIImage(named: teamsToDisplay[indexPath.row].logoPath)
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isSearching{
+            return filteredTeamsToDisplay.count
+        }
         return teamsToDisplay.count
     }
     
-    @IBAction func onLogoutButtonPressed(_ sender: Any) {
-        NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         let cell = sender as! UITableViewCell
-        
         if let indexPath = teamListTableView.indexPath(for: cell){
             let teamName = teamsToDisplay[indexPath.row].name
             let location = teamsToDisplay[indexPath.row].location
@@ -130,6 +130,27 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == ""{
+            isSearching = false
+            view.endEditing(true)
+            teamListTableView.reloadData()
+        }else{
+            isSearching = true
+            filteredTeamsToDisplay = teamsToDisplay.filter({($0.lowercased().contains(searchBar.text!.lowercased()))})
+            teamListTableView.reloadData()
+        }
+    }
+    
+    @IBAction func onProfilePressed(_ sender: Any) {
+        
+        print("hello")
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Profile") as! ProfileViewController
+        self.present(nextViewController, animated:true, completion:nil)
+    }
     /*
     // MARK: - Navigation
 
