@@ -16,7 +16,7 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var teams : [Team] = [] // All teams across all sports
     var teamsToDisplay : [Team] = [] // Teams for specified league
-    var filteredTeams : [Team] = [] // Teams for search
+    var filteredTeams : [Team] = [] // Teams for search filter
     
     var isSearching = false
 
@@ -30,10 +30,6 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         let data = readDataFromFile(file: "sports_teams")
         let csvRows = csv(data: data!)
         
-        fillTeams(rows: csvRows)
-        setTeamsToDisplay(sportsLeague: sportChosen)
-        filteredTeams = teamsToDisplay
-        
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
         
@@ -45,7 +41,10 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
 //        }
         
         // assign correct teams to display
-
+        fillTeams(rows: csvRows)
+        setTeamsToDisplay(sportsLeague: sportChosen)
+        filteredTeams = teamsToDisplay
+        
         self.title = sportChosen
         teamListTableView.delegate = self
         teamListTableView.dataSource = self
@@ -77,11 +76,8 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! UITableViewCell
         if let indexPath = teamListTableView.indexPath(for: cell){
-            let teamName = filteredTeams[indexPath.row].name
-            let location = filteredTeams[indexPath.row].location
             let detailViewController = segue.destination as! HighlightsViewController
-            detailViewController.teamName = teamName
-            detailViewController.teamLocation = location
+            detailViewController.teamSelected = filteredTeams[indexPath.row]
         }
     }
     

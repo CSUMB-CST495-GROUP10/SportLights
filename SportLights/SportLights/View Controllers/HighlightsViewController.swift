@@ -14,14 +14,13 @@ import Alamofire
 class HighlightsViewController: UIViewController {
 
     @IBOutlet weak var highlightWebView: WKWebView!
-    var teamName : String!
-    var teamLocation : String!
+    var teamSelected : Team!
     var videoCodes : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = teamName
+        self.title = teamSelected.name
         getHighlightVideo()
         //print("Team Name: " + teamName)
 
@@ -37,7 +36,7 @@ class HighlightsViewController: UIViewController {
         
         
         Alamofire.request("https://www.googleapis.com/youtube/v3/search",
-                          parameters: ["part":"snippet", "q":teamName, "key":"AIzaSyCoZEg3PUGdUDL0vwn54XVeqhoPWKatEfQ"]).responseJSON {
+                          parameters: ["part":"snippet", "q":formattedSearchParm(), "order":"relevance", "key":"AIzaSyCoZEg3PUGdUDL0vwn54XVeqhoPWKatEfQ"]).responseJSON {
                             (response) in
             if let JSON = response.result.value as? [String:Any]{
                 
@@ -55,6 +54,12 @@ class HighlightsViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func formattedSearchParm() -> String{
+        let formattedLocation = self.teamSelected.location.replacingOccurrences(of: " ", with: "+")
+        let formattedName = self.teamSelected.name.replacingOccurrences(of: " ", with: "+")
+        return "2017+\(formattedLocation)+\(formattedName)+highlights"
     }
 
     /*
