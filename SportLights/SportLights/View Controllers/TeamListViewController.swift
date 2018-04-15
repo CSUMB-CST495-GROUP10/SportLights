@@ -9,36 +9,42 @@
 import UIKit
 import Parse
 
-class TeamListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TeamListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
-    @IBOutlet weak var logoutButton: UIButton!
-    var teamsToDisplay : [Team] = []
+    @IBOutlet weak var searchBar: UISearchBar!
+   // @IBOutlet weak var logoutButton: UIButton!
+    
+    var teams : [Team] = [] // All teams across all sports
+    var teamsToDisplay : [Team] = [] // Teams for specified league
+    var filteredTeams : [Team] = [] // Teams for search
+    
+    var isSearching = false
 
     var imagesToDisplay = [UIImage(named: "raiders.gif")] // default value to be overwritten
     var sportChosen:String!
     @IBOutlet weak var teamListTableView: UITableView!
-    
-    var teams : [Team] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let data = readDataFromFile(file: "sports_teams")
         let csvRows = csv(data: data!)
-        //print(csvRows[1]) //UXM n. 166/167.
         
         fillTeams(rows: csvRows)
+        setTeamsToDisplay(sportsLeague: sportChosen)
+        filteredTeams = teamsToDisplay
+        
+        searchBar.delegate = self
+        searchBar.returnKeyType = UIReturnKeyType.done
         
         // only shows logout if user is logged in
-        if PFUser.current() == nil{
-            logoutButton.isHidden = true
-        }else{
-            logoutButton.isHidden = false
-        }
+//        if PFUser.current() == nil{
+//            logoutButton.isHidden = true
+//        }else{
+//            logoutButton.isHidden = false
+//        }
         
         // assign correct teams to display
-        setTeamsToDisplay(sportsLeague: sportChosen)
-        
 
         self.title = sportChosen
         teamListTableView.delegate = self
@@ -55,15 +61,15 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeamListCell", for: indexPath) as! TeamListCell
         cell.selectionStyle = .none
-        cell.teamNameLabel?.text = teamsToDisplay[indexPath.row].location + " " + teamsToDisplay[indexPath.row].name
-        cell.teamImageView.image = UIImage(named: teamsToDisplay[indexPath.row].logoPath)
+        cell.teamNameLabel?.text = filteredTeams[indexPath.row].location + " " + filteredTeams[indexPath.row].name
+        cell.teamImageView.image = UIImage(named: filteredTeams[indexPath.row].logoPath)
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isSearching{
-            return filteredTeamsToDisplay.count
+        if self.isSearching{
+            return filteredTeams.count
         }
         return teamsToDisplay.count
     }
@@ -71,8 +77,8 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! UITableViewCell
         if let indexPath = teamListTableView.indexPath(for: cell){
-            let teamName = teamsToDisplay[indexPath.row].name
-            let location = teamsToDisplay[indexPath.row].location
+            let teamName = filteredTeams[indexPath.row].name
+            let location = filteredTeams[indexPath.row].location
             let detailViewController = segue.destination as! HighlightsViewController
             detailViewController.teamName = teamName
             detailViewController.teamLocation = location
@@ -133,18 +139,20 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == nil || searchBar.text == ""{
             isSearching = false
+            filteredTeams = teamsToDisplay
             view.endEditing(true)
             teamListTableView.reloadData()
         }else{
             isSearching = true
-            filteredTeamsToDisplay = teamsToDisplay.filter({($0.lowercased().contains(searchBar.text!.lowercased()))})
+            filteredTeams = teamsToDisplay.filter({ (team) -> Bool in
+                let formattedPossibleMatch = team.location.lowercased() + " " + team.name.lowercased()
+                return formattedPossibleMatch.contains(searchText.lowercased())
+            })
             teamListTableView.reloadData()
         }
     }
     
     @IBAction func onProfilePressed(_ sender: Any) {
-        
-        print("hello")
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
