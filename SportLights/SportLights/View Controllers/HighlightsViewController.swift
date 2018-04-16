@@ -36,7 +36,8 @@ class HighlightsViewController: UIViewController {
         
         
         Alamofire.request("https://www.googleapis.com/youtube/v3/search",
-                          parameters: ["part":"snippet", "q":formattedSearchParm(), "order":"relevance", "key":"AIzaSyCoZEg3PUGdUDL0vwn54XVeqhoPWKatEfQ"]).responseJSON {
+                          parameters: ["part":"snippet", "q":formattedSearchParm(), "order":"relevance","channelId": getChannelId(),
+                                       "key":"AIzaSyCoZEg3PUGdUDL0vwn54XVeqhoPWKatEfQ"]).responseJSON {
                             (response) in
             if let JSON = response.result.value as? [String:Any]{
                 
@@ -59,7 +60,26 @@ class HighlightsViewController: UIViewController {
     func formattedSearchParm() -> String{
         let formattedLocation = self.teamSelected.location.replacingOccurrences(of: " ", with: "+")
         let formattedName = self.teamSelected.name.replacingOccurrences(of: " ", with: "+")
-        return "2017+\(formattedLocation)+\(formattedName)+highlights"
+        print(teamSelected.sportsLeague)
+        return "\(formattedLocation)+\(formattedName)+highlights"
+
+    }
+    func getChannelId() -> String{
+        if(teamSelected.sportsLeague == "MLB"){
+            return "UCoLrcjPV5PbUrUyXq5mjc_A"
+        }
+        else if(teamSelected.sportsLeague == "NHL"){
+            return "UCqFMzb-4AUf6WAIbl132QKA"
+        }
+        else if(teamSelected.sportsLeague == "NFL") {
+            return "UCDVYQ4Zhbm3S2dlz7P1GBDg"
+        }
+        else if(teamSelected.sportsLeague == "NBA") {
+            return "UCWJ2lWNubArHWmf3FIHbfcQ"
+        }
+        else {
+            return ""
+        }
     }
 
     /*
