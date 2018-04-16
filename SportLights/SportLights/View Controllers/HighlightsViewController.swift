@@ -10,17 +10,20 @@ import UIKit
 import WebKit
 import Parse
 import Alamofire
-
+import Foundation
 class HighlightsViewController: UIViewController {
 
     @IBOutlet weak var highlightWebView: WKWebView!
     var teamSelected : Team!
     var videoCodes : [String] = []
-    
+    //var jsonObject: [AnyObject]
+    var jsonObject: Data?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = teamSelected.name
+        self.jsonObject = try? JSONEncoder().encode(self.teamSelected)
+
         getHighlightVideo()
         //print("Team Name: " + teamName)
 
@@ -50,6 +53,7 @@ class HighlightsViewController: UIViewController {
                     print(highlight)
                      let url = URL(string:"https://www.youtube.com/watch?v=\(highlight)")
                     self.highlightWebView.load(URLRequest(url: url!))
+
                     return
                 }
             }

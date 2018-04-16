@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Team{
+class Team: Codable{
     var name : String!
     var location : String!
     var abbreviation: String!

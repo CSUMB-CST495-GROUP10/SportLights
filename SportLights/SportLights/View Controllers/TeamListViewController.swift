@@ -20,6 +20,7 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var isSearching = false
 
+    
     var imagesToDisplay = [UIImage(named: "raiders.gif")] // default value to be overwritten
     var sportChosen:String!
     @IBOutlet weak var teamListTableView: UITableView!
@@ -62,7 +63,7 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.selectionStyle = .none
         cell.teamNameLabel?.text = filteredTeams[indexPath.row].location + " " + filteredTeams[indexPath.row].name
         cell.teamImageView.image = UIImage(named: filteredTeams[indexPath.row].logoPath)
-
+        cell.team = filteredTeams[indexPath.row]
         return cell
     }
     
