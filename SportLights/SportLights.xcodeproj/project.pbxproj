@@ -21,7 +21,7 @@
 		7D5CB41E7A58D3CFEBCEF80A /* Pods_SportLights.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C410B43E7D80A4439A2A63D8 /* Pods_SportLights.framework */; };
 		7E07B637207C1D0F00B0B98C /* sports_teams.csv in Resources */ = {isa = PBXBuildFile; fileRef = 7E07B636207C1D0F00B0B98C /* sports_teams.csv */; };
 		7E4FEEDA207C2AA200907ED4 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4FEED9207C2AA200907ED4 /* Team.swift */; };
-		7E8C60722082DC2B00534802 /* SportLightsUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8C60712082DC2B00534802 /* SportLightsUser.swift */; };
+		7E57D2F220854BCB0032FF88 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E57D2F120854BCB0032FF88 /* EditProfileViewController.swift */; };
 		7EB86543207EED3D0071C860 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EB86542207EED3D0071C860 /* keys.plist */; };
 		8E02AD2620699EAF006580F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E02AD2520699EAF006580F8 /* LoginViewController.swift */; };
 		E870CAD088BEA1DBE73D8023 /* Pods_SportLightsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29AA3F01CD666DAC96488203 /* Pods_SportLightsUITests.framework */; };
@@ -70,7 +70,7 @@
 		547C0A10207C903E00C0AF74 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7E07B636207C1D0F00B0B98C /* sports_teams.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sports_teams.csv; sourceTree = SOURCE_ROOT; };
 		7E4FEED9207C2AA200907ED4 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
-		7E8C60712082DC2B00534802 /* SportLightsUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportLightsUser.swift; sourceTree = "<group>"; };
+		7E57D2F120854BCB0032FF88 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		7EB86542207EED3D0071C860 /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		8E02AD2520699EAF006580F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C410B43E7D80A4439A2A63D8 /* Pods_SportLights.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportLights.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +128,7 @@
 				542C3498207454EE00AC4EBF /* TeamListViewController.swift */,
 				546982FF20758461008C0E54 /* HighlightsViewController.swift */,
 				547C0A10207C903E00C0AF74 /* ProfileViewController.swift */,
+				7E57D2F120854BCB0032FF88 /* EditProfileViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -193,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				7E4FEED9207C2AA200907ED4 /* Team.swift */,
-				7E8C60712082DC2B00534802 /* SportLightsUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -520,12 +520,12 @@
 				542C349C20745D4C00AC4EBF /* TeamListCell.swift in Sources */,
 				5469830020758461008C0E54 /* HighlightsViewController.swift in Sources */,
 				7E4FEEDA207C2AA200907ED4 /* Team.swift in Sources */,
-				7E8C60722082DC2B00534802 /* SportLightsUser.swift in Sources */,
 				8E02AD2620699EAF006580F8 /* LoginViewController.swift in Sources */,
 				5451F5AF2058B3BC00122197 /* AppDelegate.swift in Sources */,
 				547C0A11207C903E00C0AF74 /* ProfileViewController.swift in Sources */,
 				542C00F02072E21F0061F45B /* SportsListViewController.swift in Sources */,
 				542C3499207454EE00AC4EBF /* TeamListViewController.swift in Sources */,
+				7E57D2F220854BCB0032FF88 /* EditProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

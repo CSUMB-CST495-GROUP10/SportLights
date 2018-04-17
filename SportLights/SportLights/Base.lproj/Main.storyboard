@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qLw-EA-3AR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qLw-EA-3AR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -217,29 +217,51 @@
                         <viewLayoutGuide key="safeArea" id="CsF-8i-IaT"/>
                     </view>
                     <navigationItem key="navigationItem" id="KoG-3y-Sv6">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="PWa-Mm-QmU">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Rua-Js-5kW">
-                                <rect key="frame" x="311" y="7" width="48" height="30"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Jrn-wK-k1V">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="02I-r9-WOU">
+                                <rect key="frame" x="267" y="9.5" width="92" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
+                                <state key="normal" image="settings"/>
                                 <connections>
-                                    <action selector="onLogoutPressed:" destination="vgb-ty-m7L" eventType="touchUpInside" id="B4E-7J-gbk"/>
+                                    <action selector="onSettingsTap:" destination="vgb-ty-m7L" eventType="touchUpInside" id="3Li-QN-0FS"/>
                                 </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dateCreatedLabel" destination="02q-05-VYV" id="Hz0-pO-VfZ"/>
-                        <outlet property="logoutButton" destination="Rua-Js-5kW" id="Aok-CM-ehM"/>
                         <outlet property="profileImage" destination="oAw-CY-KJx" id="3rz-4E-ENR"/>
                         <outlet property="tableView" destination="VCF-rP-6IL" id="3pb-0t-7kW"/>
                         <outlet property="teamsFollowingLabel" destination="qcJ-bG-jXv" id="eaV-c0-8kS"/>
                         <outlet property="userNameLabel" destination="9CM-bn-KSb" id="bmi-qi-3g2"/>
+                        <segue destination="z34-ZS-hXG" kind="show" identifier="editProfile" id="d9h-EO-mwx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OeP-SB-ZOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2481" y="132"/>
+            <point key="canvasLocation" x="2748" y="77"/>
+        </scene>
+        <!--Edit Profile View Controller-->
+        <scene sceneID="64C-nt-wAR">
+            <objects>
+                <viewController id="z34-ZS-hXG" customClass="EditProfileViewController" customModule="SportLights" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YMF-Oy-sS7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="uaR-8n-2Ec"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xV2-tL-9zF">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="uFQ-rl-n76">
+                            <connections>
+                                <action selector="onSave:" destination="z34-ZS-hXG" id="TcF-Fm-bDy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bln-aU-DMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3926" y="77"/>
         </scene>
         <!--Sports List View Controller-->
         <scene sceneID="j08-El-76q">
@@ -495,6 +517,7 @@
         <image name="nhlLogo" width="2000" height="2306"/>
         <image name="placeHolder_Suit_Male" width="2400" height="2149"/>
         <image name="raiders" width="2400" height="2600"/>
+        <image name="settings" width="25" height="25"/>
         <image name="sharks" width="150" height="100"/>
     </resources>
 </document>
