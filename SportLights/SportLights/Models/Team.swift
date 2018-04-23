@@ -7,24 +7,28 @@
 //
 
 import Foundation
+import Parse
 
-class Team: Codable{
-    var name : String!
-    var location : String!
-    var abbreviation: String!
-    var venue : String!
-    var sportsLeague : String!
-    var logoPath : String!
+class Team: PFObject, PFSubclassing{
+    @NSManaged var name : String!
+    @NSManaged var location : String!
+    @NSManaged var abbreviation: String!
+    @NSManaged var venue : String!
+    @NSManaged var sportsLeague : String!
+    @NSManaged var logoPath : String!
     
-    init(array: [String]){
-        name = array[0]
-        location = array[1]
-        abbreviation = array[5]
-        logoPath = array[6]
-        venue = array[3]
-        sportsLeague = array[4]
+    /* Needed to implement PFSubclassing interface */
+    class func parseClassName() -> String {
+        return "Team"
     }
     
-    
-    
+    init(array: [String]){
+        super.init()
+        self.name = array[0]
+        self.location = array[1]
+        self.abbreviation = array[5]
+        self.logoPath = array[6]
+        self.venue = array[3]
+        self.sportsLeague = array[4]
+    }
 }

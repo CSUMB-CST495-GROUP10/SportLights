@@ -16,29 +16,27 @@ class TeamListCell: UITableViewCell {
     var team: Team!
     @IBOutlet weak var followButton: UIButton!
     
+    var isFollowing: Bool!
     override func awakeFromNib() {
+        isFollowing = false
         super.awakeFromNib()
         // Initialization code
         if PFUser.current() == nil{
             followButton.isHidden = true
-        }
-    }
+        }        
+    } 
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+
     }
-    
     
     @IBAction func onFollow(_ sender: Any) {
         let user = PFUser.current()
-
-        //let jsonObject = try? JSONEncoder().encode(team)
-        //user?.add(team, forKey: "Team")
         user?.add(team.name,forKey: "TeamName")
         user?.add(team.logoPath, forKey: "TeamLogo")
-        //user?.addUniqueObject(jsonObject, forKey: "Team")
         user?.saveInBackground()
         followButton.isHidden = true
     }

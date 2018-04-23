@@ -25,6 +25,8 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     var sportChosen:String!
     @IBOutlet weak var teamListTableView: UITableView!
     
+    var teamNames: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,13 +36,6 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
         
-        // only shows logout if user is logged in
-//        if PFUser.current() == nil{
-//            logoutButton.isHidden = true
-//        }else{
-//            logoutButton.isHidden = false
-//        }
-        
         // assign correct teams to display
         fillTeams(rows: csvRows)
         setTeamsToDisplay(sportsLeague: sportChosen)
@@ -49,7 +44,10 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         self.title = sportChosen
         teamListTableView.delegate = self
         teamListTableView.dataSource = self
-        
+        let user = PFUser.current()
+        if let teamName = user!["TeamName"] as? [String]{
+            self.teamNames = teamName
+        }
         teamListTableView.reloadData()
     }
 
@@ -64,6 +62,18 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.teamNameLabel?.text = filteredTeams[indexPath.row].location + " " + filteredTeams[indexPath.row].name
         cell.teamImageView.image = UIImage(named: filteredTeams[indexPath.row].logoPath)
         cell.team = filteredTeams[indexPath.row]
+
+        
+        var target = cell.teamNameLabel.text!.split(separator: " ")[1]
+        if teamNames.contains(target.description){
+            print("Found")
+            print("Team Name: ", target.description)
+            //teamNames.remove(at: teamNames.index(of: target.description)!)
+            cell.followButton.isHidden = true
+        }
+         else{
+            cell.followButton.isHidden = false
+        }
         return cell
     }
     
@@ -74,6 +84,7 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         return teamsToDisplay.count
     }
     
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! UITableViewCell
         if let indexPath = teamListTableView.indexPath(for: cell){

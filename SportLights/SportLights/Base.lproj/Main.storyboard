@@ -189,6 +189,7 @@
                                         <connections>
                                             <outlet property="teamImageView" destination="2OG-yU-giM" id="2oW-8G-VOc"/>
                                             <outlet property="teamNameLabel" destination="Oid-L4-KaW" id="MSa-B4-bcQ"/>
+                                            <segue destination="IAU-ul-tTj" kind="show" id="zYW-IF-m2p"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -510,4 +511,7 @@
         <image name="raiders" width="2400" height="2600"/>
         <image name="sharks" width="150" height="100"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Y2y-8q-N1m"/>
+    </inferredMetricsTieBreakers>
 </document>

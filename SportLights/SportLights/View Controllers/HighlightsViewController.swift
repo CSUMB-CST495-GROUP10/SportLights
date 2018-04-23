@@ -16,16 +16,10 @@ class HighlightsViewController: UIViewController {
     @IBOutlet weak var highlightWebView: WKWebView!
     var teamSelected : Team!
     var videoCodes : [String] = []
-    //var jsonObject: [AnyObject]
-    var jsonObject: Data?
+    var teamName: String!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = teamSelected.name
-        self.jsonObject = try? JSONEncoder().encode(self.teamSelected)
-
         getHighlightVideo()
-        //print("Team Name: " + teamName)
 
     }
 
@@ -44,16 +38,12 @@ class HighlightsViewController: UIViewController {
             if let JSON = response.result.value as? [String:Any]{
                 
                 for video in JSON["items"] as! NSArray {
-                    //var vid = (video as AnyObject).value(forKey: "id")
-                    //print(vid!["kind"])
-                    //vid.value(forKey: "videoId")
                     var vid = (video as AnyObject).value(forKey: "id")
                     vid = (vid as AnyObject).value(forKey: "videoId")
                     let highlight = vid as! String
                     print(highlight)
                      let url = URL(string:"https://www.youtube.com/watch?v=\(highlight)")
                     self.highlightWebView.load(URLRequest(url: url!))
-
                     return
                 }
             }
@@ -61,9 +51,17 @@ class HighlightsViewController: UIViewController {
     }
     
     func formattedSearchParm() -> String{
-        let formattedLocation = self.teamSelected.location.replacingOccurrences(of: " ", with: "+")
-        let formattedName = self.teamSelected.name.replacingOccurrences(of: " ", with: "+")
-        return "2017+\(formattedLocation)+\(formattedName)+highlights"
+        if(teamSelected != nil) {
+            let formattedLocation = self.teamSelected.location.replacingOccurrences(of: " ", with: "+")
+            let formattedName = self.teamSelected.name.replacingOccurrences(of: " ", with: "+")
+            return "2017+\(formattedLocation)+\(formattedName)+highlights"
+        }
+       
+        if(teamName != nil) {
+             return "\(teamName)+highlights"
+            print("\(teamName)+highlights")
+        }
+        return ""
     }
 
     /*

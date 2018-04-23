@@ -20,6 +20,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     var teamsToDisplay : [Team] = [] // Teams for specified league
     var teamNames: [String]!
     var teamLogos: [String]!
+    var team: Team!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -62,6 +63,22 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return teamNames.count
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell){
+            let detailViewController = segue.destination as! HighlightsViewController
+            
+//            if(teamNames[indexPath.row] as String! != nil) {
+//                self.team.name = teamNames[indexPath.row]
+//            }
+//            if(teamLogos[indexPath.row] as String! != nil) {
+//                self.team.logoPath = teamLogos[indexPath.row]
+//            }
+            detailViewController.teamName = self.teamNames[indexPath.row]
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
