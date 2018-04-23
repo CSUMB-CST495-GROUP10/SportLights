@@ -18,8 +18,10 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var teamsFollowingLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var teamsToDisplay : [Team] = [] // Teams for specified league
-    var teamNames: [String]!
-    var teamLogos: [String]!
+    var teamNames: [String] = []
+    var teamLogos: [String] = []
+    var teamLeagues: [String] = []
+    var teamLocations: [String] = []
     var team: Team!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,15 +38,15 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         //print(type(user!["Team"]))
         if let teamName = user!["TeamName"] as? [String]{
             self.teamNames = teamName
-            for name in teamName{
-               // print(name)
-            }
         }
         if let teamLogo = user!["TeamLogo"] as? [String]{
             self.teamLogos = teamLogo
-            for logo in teamLogo{
-                //print(logo)
-            }
+        }
+        if let teamLeague = user!["TeamLeague"] as? [String]{
+            self.teamLeagues = teamLeague
+        }
+        if let teamLocation = user!["TeamLocation"] as? [String] {
+            self.teamLocations = teamLocation
         }
         tableView.delegate = self
         tableView.dataSource = self
@@ -56,7 +58,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.selectionStyle = .none
         cell.teamNameLabel?.text = self.teamNames[indexPath.row] as String?
         cell.teamImageView.image = UIImage(named: teamLogos[indexPath.row])
-        //cell.team = filteredTeams[indexPath.row]
         return cell
         
     }
@@ -68,14 +69,9 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = sender as! UITableViewCell
         if let indexPath = tableView.indexPath(for: cell){
             let detailViewController = segue.destination as! HighlightsViewController
-            
-//            if(teamNames[indexPath.row] as String! != nil) {
-//                self.team.name = teamNames[indexPath.row]
-//            }
-//            if(teamLogos[indexPath.row] as String! != nil) {
-//                self.team.logoPath = teamLogos[indexPath.row]
-//            }
             detailViewController.teamName = self.teamNames[indexPath.row]
+            detailViewController.teamLeague = self.teamLeagues[indexPath.row]
+            detailViewController.teamLocation = self.teamLocations[indexPath.row]
         }
     }
     

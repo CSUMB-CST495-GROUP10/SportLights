@@ -45,8 +45,10 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         teamListTableView.delegate = self
         teamListTableView.dataSource = self
         let user = PFUser.current()
-        if let teamName = user!["TeamName"] as? [String]{
-            self.teamNames = teamName
+        if(user != nil) {
+            if let teamName = user!["TeamName"] as? [String]{
+                self.teamNames = teamName
+            }
         }
         teamListTableView.reloadData()
     }
@@ -63,16 +65,19 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.teamImageView.image = UIImage(named: filteredTeams[indexPath.row].logoPath)
         cell.team = filteredTeams[indexPath.row]
 
-        
-        var target = cell.teamNameLabel.text!.split(separator: " ")[1]
-        if teamNames.contains(target.description){
-            print("Found")
-            print("Team Name: ", target.description)
-            //teamNames.remove(at: teamNames.index(of: target.description)!)
-            cell.followButton.isHidden = true
-        }
-         else{
-            cell.followButton.isHidden = false
+        let user = PFUser.current()
+        if(user != nil) {
+            var target = cell.teamNameLabel.text!.split(separator: " ")[1]
+            if teamNames.contains(target.description){
+                print("Found")
+                print("Team Name: ", target.description)
+                //teamNames.remove(at: teamNames.index(of: target.description)!)
+                cell.followButton.isHidden = true
+            }
+            else{
+                cell.followButton.isHidden = false
+            }
+
         }
         return cell
     }

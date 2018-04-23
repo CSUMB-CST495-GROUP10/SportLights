@@ -17,6 +17,8 @@ class HighlightsViewController: UIViewController {
     var teamSelected : Team!
     var videoCodes : [String] = []
     var teamName: String!
+    var teamLeague:String!
+    var teamLocation: String!
     override func viewDidLoad() {
         super.viewDidLoad()
         getHighlightVideo()
@@ -33,10 +35,10 @@ class HighlightsViewController: UIViewController {
         
         
         Alamofire.request("https://www.googleapis.com/youtube/v3/search",
-                          parameters: ["part":"snippet", "q":formattedSearchParm(), "order":"relevance", "key":"AIzaSyCoZEg3PUGdUDL0vwn54XVeqhoPWKatEfQ"]).responseJSON {
+                          parameters: ["part":"snippet", "q":formattedSearchParm(), "order":"relevance","channelId": getChannelId(),
+                                       "key":"AIzaSyCoZEg3PUGdUDL0vwn54XVeqhoPWKatEfQ"]).responseJSON {
                             (response) in
             if let JSON = response.result.value as? [String:Any]{
-                
                 for video in JSON["items"] as! NSArray {
                     var vid = (video as AnyObject).value(forKey: "id")
                     vid = (vid as AnyObject).value(forKey: "videoId")
@@ -54,15 +56,50 @@ class HighlightsViewController: UIViewController {
         if(teamSelected != nil) {
             let formattedLocation = self.teamSelected.location.replacingOccurrences(of: " ", with: "+")
             let formattedName = self.teamSelected.name.replacingOccurrences(of: " ", with: "+")
-            return "2017+\(formattedLocation)+\(formattedName)+highlights"
+            print("\(formattedLocation)+\(formattedName)")
+            return "\(formattedLocation)+\(formattedName)"
         }
        
-        if(teamName != nil) {
-             return "\(teamName)+highlights"
-            print("\(teamName)+highlights")
+        if(teamName != nil && teamLocation != nil) {
+            let formattedLocation = self.teamLocation.replacingOccurrences(of: " ", with: "+")
+            let formattedName = self.teamName.replacingOccurrences(of: " ", with: "+")
+            print("\(formattedLocation)+\(formattedName)")
+            return "\(formattedLocation)+\(formattedName)"
         }
         return ""
+
     }
+    func getChannelId() -> String{
+        if(teamSelected != nil) {
+            if(teamSelected.sportsLeague == "MLB"){
+                return "UCoLrcjPV5PbUrUyXq5mjc_A"
+            }
+            else if(teamSelected.sportsLeague == "NHL"){
+                return "UCqFMzb-4AUf6WAIbl132QKA"
+            }
+            else if(teamSelected.sportsLeague == "NFL") {
+                return "UCDVYQ4Zhbm3S2dlz7P1GBDg"
+            }
+            else if(teamSelected.sportsLeague == "NBA") {
+                return "UCWJ2lWNubArHWmf3FIHbfcQ"
+            }
+        }
+        if(teamLeague != nil){
+            if(teamLeague == "MLB"){
+                return "UCoLrcjPV5PbUrUyXq5mjc_A"
+            }
+            else if(teamLeague == "NHL"){
+                return "UCqFMzb-4AUf6WAIbl132QKA"
+            }
+            else if(teamLeague == "NFL") {
+                return "UCDVYQ4Zhbm3S2dlz7P1GBDg"
+            }
+            else if(teamLeague == "NBA") {
+                return "UCWJ2lWNubArHWmf3FIHbfcQ"
+            }
+        }
+            return ""
+}
 
     /*
     // MARK: - Navigation

@@ -14,11 +14,10 @@ class TeamListCell: UITableViewCell {
     @IBOutlet weak var teamNameLabel: UILabel!
 
     var team: Team!
+    var league: String!
     @IBOutlet weak var followButton: UIButton!
     
-    var isFollowing: Bool!
     override func awakeFromNib() {
-        isFollowing = false
         super.awakeFromNib()
         // Initialization code
         if PFUser.current() == nil{
@@ -37,6 +36,8 @@ class TeamListCell: UITableViewCell {
         let user = PFUser.current()
         user?.add(team.name,forKey: "TeamName")
         user?.add(team.logoPath, forKey: "TeamLogo")
+        user!.add(team.sportsLeague, forKey: "TeamLeague")
+        user!.add(team.location, forKey: "TeamLocation")
         user?.saveInBackground()
         followButton.isHidden = true
     }
