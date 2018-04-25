@@ -34,12 +34,22 @@ class TeamListCell: UITableViewCell {
     
     @IBAction func onFollow(_ sender: Any) {
         let user = PFUser.current()
-        user?.add(team.name,forKey: "TeamName")
-        user?.add(team.logoPath, forKey: "TeamLogo")
-        user!.add(team.sportsLeague, forKey: "TeamLeague")
-        user!.add(team.location, forKey: "TeamLocation")
-        user?.saveInBackground()
-        followButton.isHidden = true
+        if(followButton.currentTitle == "follow") {
+            user?.add(team.name,forKey: "TeamName")
+            user?.add(team.logoPath, forKey: "TeamLogo")
+            user!.add(team.sportsLeague, forKey: "TeamLeague")
+            user!.add(team.location, forKey: "TeamLocation")
+            user?.saveInBackground()
+            followButton.setTitle("unfollow", for: .normal)
+        } else{
+            user?.remove(team.name, forKey: "TeamName")
+            user?.remove(team.logoPath, forKey: "TeamLogo")
+            user?.remove(team.sportsLeague, forKey: "TeamLeague")
+            user?.remove(team.location, forKey: "TeamLocation")
+            user?.saveInBackground()
+            followButton.setTitle("follow", for: .normal)
+        }
+        
     }
     
 }

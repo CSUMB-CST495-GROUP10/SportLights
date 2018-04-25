@@ -72,10 +72,13 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
                 print("Found")
                 print("Team Name: ", target.description)
                 //teamNames.remove(at: teamNames.index(of: target.description)!)
-                cell.followButton.isHidden = true
+                //cell.followButton.isHidden = true
+                cell.followButton.setTitle("unfollow", for: .normal)
+
             }
             else{
                 cell.followButton.isHidden = false
+                cell.followButton.setTitle("follow", for: .normal)
             }
 
         }
