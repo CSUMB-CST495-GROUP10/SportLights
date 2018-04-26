@@ -48,6 +48,11 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         if let teamLocation = user!["TeamLocation"] as? [String] {
             self.teamLocations = teamLocation
         }
+        print("Team Names: ",teamNames)
+        print("Team Logo: ", teamLogos)
+        print("Team League: ", teamLeagues)
+        print("Team Locations: ", teamLocations)
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
