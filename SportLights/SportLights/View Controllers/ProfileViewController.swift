@@ -23,19 +23,28 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     var teamLeagues: [String] = []
     var teamLocations: [String] = []
     var team: Team!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        let user = PFUser.current()
+        
+        // profileImage
+        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
+        self.profileImage.clipsToBounds = true
+        
+        // username
+        userNameLabel.text = PFUser.current()?.username
+        
+        // member since date
         let date = PFUser.current()?.createdAt
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM dd,yyyy"
         let stringDate = dateFormatter.string(from: date as! Date)
         dateCreatedLabel.text = stringDate
-        userNameLabel.text = PFUser.current()?.username
         
-        let user = PFUser.current()
-        
-        //print(type(user!["Team"]))
+        // team information
         if let teamName = user!["TeamName"] as? [String]{
             self.teamNames = teamName
         }
@@ -48,10 +57,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         if let teamLocation = user!["TeamLocation"] as? [String] {
             self.teamLocations = teamLocation
         }
-        print("Team Names: ",teamNames)
-        print("Team Logo: ", teamLogos)
-        print("Team League: ", teamLeagues)
-        print("Team Locations: ", teamLocations)
         
         tableView.delegate = self
         tableView.dataSource = self
