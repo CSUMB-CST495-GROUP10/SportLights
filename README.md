@@ -20,7 +20,7 @@ The following **stretch** features are implemented:
 - [x] User can sign in 
 - [x] User can Logout. 
 - [x] persistance login
-- [ ] User can save their favorite teams.
+- [x] User can save their favorite teams.
 
 The following **additional** features are implemented:
 
@@ -76,7 +76,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/sIpBXfP.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/StgvITP.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
