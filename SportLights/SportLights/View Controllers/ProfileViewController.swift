@@ -32,40 +32,25 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let user = PFUser.current()
         
         // profileImage
-        let query = PFQuery(className: "profileImage")
-        query.findObjectsInBackground { (object, error) in
-            if object != nil && error == nil{
-                for user in object!{
-                    let userName = user["userName"] as! String
-                    let pfUserName = PFUser.current()?.username as! String
+        let query = PFQuery()
+        query.whereKey("username", equalTo: user?.username)
+        query.findObjectsInBackground { (object, error) -> Void in
+            if error == nil && object != nil{
+                print(object!)
+                print("here")
+                
+                for userObject in object!{
+                    print("here2")
                     
-                    // if user in database
-                    if userName == pfUserName{
-                        print(user["userName"])
-                        print(user["profileImageFile"])
-                        
-                        if let userPicture = user["profileImageFile"] as? PFFile{
-                            userPicture.getDataInBackground(block: { (imageData, error) in
-                                if error == nil{
-                                    self.userProfileImageData = UIImage(data: imageData!)
-                                    self.profileImage.image = self.userProfileImageData
-                                    print("CHANGED USER PROFILE IMAGE CHANGED")
-                                }
-                                else{
-                                    print("ERROR: UNABLE TO CHANGE USER PROFILE IMAGE")
-                                    print(error.debugDescription)
-                                }
-                            })
-                        }
-                    }
-                    else{
-                        print("ERROR: USER NOT IN DATABASE")
-                    }
+                    let imagefile = userObject["profileImageFile"] as! PFFile
+                    let username = userObject["username"] as! String
                     
-                } // for
+                    print(username)
+                    print(imagefile)
+                }
             }
             else{
-                print("ERROR: UNABLE TO FIND OBJECT ID IN PARSE")
+                print("ERROR: UNABLE TO FIND USER")
                 print(error.debugDescription)
             }
         }
@@ -105,7 +90,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FollowingTeams", for: indexPath) as! TeamListCell
         cell.selectionStyle = .none
-        cell.teamNameLabel?.text = self.teamNames[indexPath.row] as String?
+        cell.teamNameLabel?.text = (self.teamLocations[indexPath.row] as String?)! + " " + self.teamNames[indexPath.row] as String?
         cell.teamImageView.image = UIImage(named: teamLogos[indexPath.row])
         return cell
         
@@ -156,30 +141,33 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : Any]) {
-        var userFound = false
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
+            print("ENTERED IMAGE PICKER")
+            
             // if user has a row in the database: change it's value for the image date
-            let query = PFQuery(className: "profileImage")
+            let query = PFQuery()
+            query.whereKey("username", equalTo: PFUser.current()?.username)
             query.findObjectsInBackground { (object, error) in
-                if error == nil{
-                    if object != nil && error == nil{
-                        for user in object!{
-                            let userName = user["userName"] as! String
-                            let pfUserName = PFUser.current()?.username as! String
-                            
-                            // if user found in database
-                            if userName == pfUserName{
-                                let imageData = UIImagePNGRepresentation(image)
-                                let parseImageFile = PFFile(name: "profileImage.png", data: imageData!)
-                                user["profileImageFile"] = parseImageFile
-                                userFound = true
-                                
-                                print("USER FOUND IN DATABASE AND ASSIGNED NEW PROFILE IMAGE FILE")
-                            }//if
-                        }//for
-                    }//if
+                if object != nil && error == nil{
+                    
+                    print("BEFORE FOR LOOP")
+                    
+                    for user in object!{
+                        
+                        print("IN FOR LOOP")
+                        
+                        let imageData = UIImagePNGRepresentation(image)
+                        let parseImageFile = PFFile(name: "profileImage.png", data: imageData!)
+                        user["profileImageFile"] = parseImageFile
+                        self.profileImage.image = image
+                        
+                        print("USER FOUND IN DATABASE AND ASSIGNED NEW PROFILE IMAGE FILE")
+                    }//for
+                    
+                    print("AFTER FOR LOOP")
+                    
                 }//if
                 else{
                     print(error?.localizedDescription)
@@ -187,11 +175,23 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 }
             }
             
-            // if the user was not found: create row in database for them with image date
-            if userFound == false{
-                
-                print("USER WAS NOT FOUND IN DATABASE!")
-                
+        } // if image
+        
+        // Dismiss UIImagePickerController to go back to your original view controller
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+}
                 let profileImageClass = PFObject(className: "profileImage")
                 profileImageClass["userName"] = PFUser.current()?.username
                 profileImageClass.saveInBackground { (success, error) in
