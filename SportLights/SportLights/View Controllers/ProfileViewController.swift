@@ -9,14 +9,15 @@
 import Parse
 import UIKit
 
-class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate{
+    
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var dateCreatedLabel: UILabel!
     @IBOutlet weak var teamsFollowingLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    var userProfileImageData: UIImage!
     var teamsToDisplay : [Team] = [] // Teams for specified league
     var teamNames: [String] = []
     var teamLogos: [String] = []
@@ -31,6 +32,44 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         let user = PFUser.current()
         
         // profileImage
+        let query = PFQuery(className: "profileImage")
+        query.findObjectsInBackground { (object, error) in
+            if object != nil && error == nil{
+                for user in object!{
+                    let userName = user["userName"] as! String
+                    let pfUserName = PFUser.current()?.username as! String
+                    
+                    // if user in database
+                    if userName == pfUserName{
+                        print(user["userName"])
+                        print(user["profileImageFile"])
+                        
+                        if let userPicture = user["profileImageFile"] as? PFFile{
+                            userPicture.getDataInBackground(block: { (imageData, error) in
+                                if error == nil{
+                                    self.userProfileImageData = UIImage(data: imageData!)
+                                    self.profileImage.image = self.userProfileImageData
+                                    print("CHANGED USER PROFILE IMAGE CHANGED")
+                                }
+                                else{
+                                    print("ERROR: UNABLE TO CHANGE USER PROFILE IMAGE")
+                                    print(error.debugDescription)
+                                }
+                            })
+                        }
+                    }
+                    else{
+                        print("ERROR: USER NOT IN DATABASE")
+                    }
+                    
+                } // for
+            }
+            else{
+                print("ERROR: UNABLE TO FIND OBJECT ID IN PARSE")
+                print(error.debugDescription)
+            }
+        }
+        
         self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
         self.profileImage.clipsToBounds = true
         
@@ -41,7 +80,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         let date = PFUser.current()?.createdAt
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM dd,yyyy"
-        let stringDate = dateFormatter.string(from: date as! Date)
+        let stringDate = dateFormatter.string(from: date as Date!)
         dateCreatedLabel.text = stringDate
         
         // team information
@@ -62,7 +101,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.dataSource = self
         tableView.reloadData()
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FollowingTeams", for: indexPath) as! TeamListCell
         cell.selectionStyle = .none
@@ -89,19 +128,111 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func onLogoutPressed(_ sender: Any) {
-         NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
+    }
+    
+    @IBAction func onProfileImageButtonPressed(_ sender: Any) {
+        
+        let vc = UIImagePickerController()
+        vc.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        vc.allowsEditing = true
+        vc.sourceType = UIImagePickerControllerSourceType.camera
+        
+        self.present(vc, animated: true, completion: nil)
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            print("Camera is available 📸")
+            vc.sourceType = .camera
+        } else {
+            print("Camera 🚫 available so we will use photo library instead")
+            vc.sourceType = .photoLibrary
+        }
+        
+    }
+    
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
+        var userFound = false
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            // if user has a row in the database: change it's value for the image date
+            let query = PFQuery(className: "profileImage")
+            query.findObjectsInBackground { (object, error) in
+                if error == nil{
+                    if object != nil && error == nil{
+                        for user in object!{
+                            let userName = user["userName"] as! String
+                            let pfUserName = PFUser.current()?.username as! String
+                            
+                            // if user found in database
+                            if userName == pfUserName{
+                                let imageData = UIImagePNGRepresentation(image)
+                                let parseImageFile = PFFile(name: "profileImage.png", data: imageData!)
+                                user["profileImageFile"] = parseImageFile
+                                userFound = true
+                                
+                                print("USER FOUND IN DATABASE AND ASSIGNED NEW PROFILE IMAGE FILE")
+                            }//if
+                        }//for
+                    }//if
+                }//if
+                else{
+                    print(error?.localizedDescription)
+                    print(error.debugDescription)
+                }
+            }
+            
+            // if the user was not found: create row in database for them with image date
+            if userFound == false{
+                
+                print("USER WAS NOT FOUND IN DATABASE!")
+                
+                let profileImageClass = PFObject(className: "profileImage")
+                profileImageClass["userName"] = PFUser.current()?.username
+                profileImageClass.saveInBackground { (success, error) in
+                    // if able to save to parse
+                    if error == nil{
+                        let imageData = UIImagePNGRepresentation(image)
+                        let parseImageFile = PFFile(name: "profileImage.png", data: imageData!)
+                        profileImageClass["profileImageFile"] = parseImageFile
+                        profileImageClass.saveInBackground(block: { (success, error) in
+                            // if able to upload image
+                            if error == nil{
+                                print("IMAGE UPLOADED TO PARSE!")
+                                self.profileImage.image = image
+                            }
+                            else{
+                                print("ERROR: UNABLE TO SAVE IMAGE TO PARSE!")
+                                print(error.debugDescription)
+                            }
+                        })
+                    }
+                    else{
+                        print("ERROR: UNABLE TO SAVE TO PARSE!")
+                        print(error.debugDescription)
+                    }
+                }
+            }//if
+            
+        } // if image
+        
+        // Dismiss UIImagePickerController to go back to your original view controller
+        picker.dismiss(animated: true, completion: nil)
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
