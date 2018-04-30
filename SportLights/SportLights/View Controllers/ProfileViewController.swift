@@ -28,16 +28,17 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
         
         let user = PFUser.current()
+        self.title = "Profile"
         
         // username
         userNameLabel.text = PFUser.current()?.username
         
-        // member since date
-        let date = PFUser.current()?.createdAt
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM dd,yyyy"
-        let stringDate = dateFormatter.string(from: date as! Date)
-        dateCreatedLabel.text = stringDate
+//        // member since date
+//        let date = PFUser.current()?.createdAt
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "MMMM dd,yyyy"
+//        let stringDate = dateFormatter.string(from: date as! Date)
+//        dateCreatedLabel.text = stringDate
         
         // team information
         if let teamName = user!["TeamName"] as? [String]{
@@ -61,7 +62,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FollowingTeams", for: indexPath) as! TeamListCell
         cell.selectionStyle = .none
-        cell.teamNameLabel?.text = self.teamNames[indexPath.row] as String?
+        cell.teamNameLabel?.text = (self.teamLocations[indexPath.row] as String?)! + " " + self.teamNames[indexPath.row] as String?
         cell.teamImageView.image = UIImage(named: teamLogos[indexPath.row])
         return cell
         
