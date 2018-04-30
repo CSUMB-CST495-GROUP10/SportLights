@@ -12,7 +12,6 @@ import UIKit
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
     @IBOutlet weak var logoutButton: UIButton!
-    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var dateCreatedLabel: UILabel!
     @IBOutlet weak var teamsFollowingLabel: UILabel!
@@ -29,10 +28,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
         
         let user = PFUser.current()
-        
-        // profileImage
-        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
-        self.profileImage.clipsToBounds = true
         
         // username
         userNameLabel.text = PFUser.current()?.username
